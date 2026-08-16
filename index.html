@@ -1,189 +1,76 @@
-Here’s a **clean, production‑ready version** of your HTML with all corrections applied. I’ve removed outdated tags, improved accessibility, ensured semantic consistency, and polished the structure for SEO and usability:
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="TechFix Daily — practical IT troubleshooting guides, Windows, Linux, networking, AI, software and technology tutorials.">
-  <meta name="author" content="TechFix Daily">
-  <meta name="robots" content="index, follow">
-  <title>TechFix Daily | Practical Technology Guides</title>
-  <link rel="canonical" href="https://techfixdaily.com/">
-  <link rel="stylesheet" href="style.css">
+  <meta name="description" content="Beginner-friendly guide to troubleshooting network connections — cables, adapters, IP, DNS, and connectivity.">
+  <title>How to Troubleshoot a Network Connection | TechFix Daily</title>
+  <link rel="stylesheet" href="../style.css">
 </head>
 <body>
 <header class="site-header">
   <div class="container nav-wrap">
-    <a class="logo" href="index.html">
-      <span class="logo-mark">TF</span><span>TechFix <b>Daily</b></span>
-    </a>
-    <button class="menu-btn" aria-label="Open menu" aria-expanded="false">☰</button>
+    <a class="logo" href="../index.html"><span class="logo-mark">TF</span><span>TechFix <b>Daily</b></span></a>
     <nav class="nav" role="navigation" aria-label="Main navigation">
-      <a href="#home">Home</a>
-      <a href="#categories">Categories</a>
-      <a href="#latest">Latest</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
+      <a href="../index.html#home">Home</a>
+      <a href="../index.html#categories">Categories</a>
+      <a href="../index.html#latest">Latest</a>
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#contact">Contact</a>
     </nav>
-    <button class="search-btn" aria-label="Search" aria-expanded="false">⌕</button>
   </div>
 </header>
 
-<main id="home">
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="container hero-grid">
-      <div>
-        <span class="eyebrow">IT • AI • NETWORKING • HOW-TO</span>
-        <h1>Technology made <span>simple.</span></h1>
-        <p class="hero-text">Practical troubleshooting guides, technology tutorials, software tips and beginner-friendly IT knowledge — without the confusing jargon.</p>
-        <div class="hero-actions">
-          <a class="btn primary" href="#latest">Explore articles</a>
-          <a class="btn secondary" href="#categories">Browse topics</a>
-        </div>
-        <div class="trust-row">
-          <span>✓ Step-by-step guides</span>
-          <span>✓ Beginner friendly</span>
-          <span>✓ Practical solutions</span>
-        </div>
-      </div>
-      <div class="hero-card">
-        <div class="terminal-top"><i></i><i></i><i></i><span>techfix-guide.sh</span></div>
-        <pre><code>$ diagnose --network
+<main class="article-page">
+  <article class="container">
+    <header class="article-header">
+      <span class="tag">Networking</span>
+      <h1>How to Troubleshoot a Network Connection: A Beginner's Guide</h1>
+      <p class="article-meta">8 min read · Beginner</p>
+    </header>
 
-Checking connection...
-✓ Adapter detected
-✓ IP address assigned
-✓ DNS responding
-✓ Internet reachable
+    <section class="article-content">
+      <p>Network issues can be frustrating, but most problems can be solved with a simple checklist. This guide walks you through the essential steps before escalating to advanced troubleshooting.</p>
 
-Status: <span class="status">READY</span>
+      <h2>1. Check Physical Connections</h2>
+      <ul>
+        <li>Ensure Ethernet cables are securely plugged in.</li>
+        <li>Verify Wi‑Fi is enabled on your device.</li>
+        <li>Restart your router or modem if needed.</li>
+      </ul>
 
-$ techfix --next-step</code></pre>
-      </div>
-    </div>
-  </section>
+      <h2>2. Verify Adapter Status</h2>
+      <p>Open your system’s network settings and confirm the adapter is enabled. On Windows, check <em>Network & Internet Settings</em>. On Linux, use <code>ifconfig</code> or <code>ip addr</code>.</p>
 
-  <!-- Stats -->
-  <section class="stats">
-    <div class="container stats-grid">
-      <div><strong>IT</strong><span>Support Guides</span></div>
-      <div><strong>AI</strong><span>Technology Tips</span></div>
-      <div><strong>HOW-TO</strong><span>Step-by-Step Tutorials</span></div>
-      <div><strong>FREE</strong><span>Helpful Resources</span></div>
-    </div>
-  </section>
+      <h2>3. Confirm IP Configuration</h2>
+      <p>Run <code>ipconfig</code> (Windows) or <code>ifconfig</code> (Linux/Mac) to ensure your device has a valid IP address.</p>
 
-  <!-- Categories -->
-  <section class="section" id="categories">
-    <div class="container">
-      <div class="section-head">
-        <div>
-          <span class="eyebrow">EXPLORE TOPICS</span>
-          <h2>Find what you need</h2>
-        </div>
-        <p>Choose a topic and discover practical guides written for real-world problems.</p>
-      </div>
-      <div class="category-grid">
-        <a class="category" href="#latest" data-category="Windows"><span>▣</span><h3>Windows</h3><p>Fix common Windows issues and learn useful settings.</p></a>
-        <a class="category" href="#latest" data-category="Linux"><span>⌘</span><h3>Linux</h3><p>Commands, troubleshooting and beginner-friendly Linux guides.</p></a>
-        <a class="category" href="#latest" data-category="Networking"><span>⌁</span><h3>Networking</h3><p>Wi-Fi, DNS, IP, connectivity and network troubleshooting.</p></a>
-        <a class="category" href="#latest" data-category="AI & Technology"><span>✦</span><h3>AI & Technology</h3><p>Useful AI tools, tips and practical technology explainers.</p></a>
-        <a class="category" href="#latest" data-category="IT Support"><span>⚙</span><h3>IT Support</h3><p>Practical support workflows and computer troubleshooting.</p></a>
-        <a class="category" href="#latest" data-category="Software & Tools"><span>▤</span><h3>Software & Tools</h3><p>Guides to useful software and productivity tools.</p></a>
-      </div>
-    </div>
-  </section>
+      <h2>4. Test DNS Resolution</h2>
+      <p>Try pinging a domain name, e.g. <code>ping google.com</code>. If DNS fails, switch to a public DNS like <code>8.8.8.8</code>.</p>
 
-  <!-- Featured -->
-  <section class="section featured">
-    <div class="container">
-      <div class="section-head">
-        <div><span class="eyebrow">FEATURED</span><h2>Start here</h2></div>
-      </div>
-      <article class="featured-card">
-        <div class="featured-art">
-          <div class="screen"><span>NETWORK</span><strong>Connected.</strong><small>Simple steps. Better troubleshooting.</small></div>
-        </div>
-        <div class="featured-copy">
-          <span class="tag">Networking</span>
-          <h3>How to Troubleshoot a Network Connection: A Beginner's Guide</h3>
-          <p>Learn a simple process for checking cables, adapters, IP configuration, DNS, ping and connectivity before escalating a network issue.</p>
-          <div class="article-meta">8 min read · Beginner</div>
-          <a class="read-btn" href="blog/network-troubleshooting.html">Read full guide →</a>
-        </div>
-      </article>
-    </div>
-  </section>
+      <h2>5. Check Internet Reachability</h2>
+      <p>Ping a known IP address (e.g. <code>8.8.8.8</code>). If this works but DNS doesn’t, the issue is DNS‑related.</p>
 
-  <!-- Latest -->
-  <section class="section" id="latest">
-    <div class="container">
-      <div class="section-head">
-        <div><span class="eyebrow">LATEST GUIDES</span><h2>Practical answers</h2></div>
-        <div class="filter-wrap">
-          <input id="searchInput" type="search" placeholder="Search articles..." aria-label="Search articles">
-          <select id="categoryFilter">
-            <option value="All">All topics</option>
-            <option>Windows</option>
-            <option>Linux</option>
-            <option>Networking</option>
-            <option>AI & Technology</option>
-            <option>IT Support</option>
-            <option>Software & Tools</option>
-          </select>
-        </div>
-      </div>
-      <div id="articleGrid" class="article-grid"></div>
-      <p id="noResults" class="no-results" hidden>No articles match your search.</p>
-    </div>
-  </section>
+      <h2>6. Escalate if Needed</h2>
+      <p>If none of the above resolves the issue, document your steps and contact IT support with details.</p>
+    </section>
 
-  <!-- Newsletter -->
-  <section class="newsletter">
-    <div class="container newsletter-box">
-      <div>
-        <span class="eyebrow">FREE TECHNOLOGY TIPS</span>
-        <h2>Get useful guides in your inbox.</h2>
-        <p>Use this form later with your email provider. For now, it is a front-end demo.</p>
-      </div>
-      <form id="newsletterForm">
-        <input type="email" name="email" required placeholder="Your email address" aria-label="Email address">
-        <button class="btn primary" type="submit">Subscribe</button>
-      </form>
-    </div>
-  </section>
-
-  <!-- About -->
-  <section class="section about" id="about">
-    <div class="container two-col">
-      <div>
-        <span class="eyebrow">ABOUT TECHFIX DAILY</span>
-        <h2>Useful technology knowledge without the jargon.</h2>
-      </div>
-      <div>
-        <p>TechFix Daily is designed as a practical technology publication covering IT support, troubleshooting, networking, Windows, Linux, AI and software.</p>
-        <p>The goal is simple: explain technical problems clearly and provide steps readers can actually follow.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section class="section contact" id="contact">
-    <div class="container contact-card">
-      <div>
-        <span class="eyebrow">CONTACT</span>
-        <h2>Have a topic you'd like explained?</h2>
-        <p>Send a suggestion and help shape future guides.</p>
-      </div>
-      <a class="btn primary" href="mailto:YOUR-EMAIL@example.com">Email TechFix Daily</a>
-    </div>
-  </section>
+    <footer class="article-footer">
+      <p>Written by TechFix Daily · Practical troubleshooting guides without the jargon.</p>
+      <a class="btn secondary" href="../index.html#latest">← Back to Latest Guides</a>
+    </footer>
+  </article>
 </main>
 
-<!-- Footer -->
 <footer>
   <div class="container footer-grid">
-    <div
+    <div><a class="logo" href="../index.html"><span class="logo-mark">TF</span><span>TechFix <b>Daily</b></span></a><p>Practical technology guides and troubleshooting resources.</p></div>
+    <div><h4>Topics</h4><a href="../index.html#categories">Windows</a><a href="../index.html#categories">Linux</a><a href="../index.html#categories">Networking</a><a href="../index.html#categories">AI & Technology</a></div>
+    <div><h4>Information</h4><a href="../index.html#about">About</a><a href="../index.html#contact">Contact</a><a href="../privacy.html">Privacy Policy</a><a href="../disclaimer.html">Disclaimer</a></div>
+  </div>
+  <div class="container copyright">© <span id="year"></span> TechFix Daily. All rights reserved.</div>
+</footer>
+
+<script src="../script.js"></script>
+</body>
+</html>
