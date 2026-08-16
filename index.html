@@ -1,134 +1,809 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Tech By Umer — practical IT troubleshooting guides, Windows, Linux, networking, AI, software and technology tutorials.">
-<meta name="author" content="Umer Tech>
-<title>Tech By Umer | Practical Technology Guides</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="IT Guide by Umer — practical IT troubleshooting guides, Windows, Linux, networking, AI, software and technology tutorials explained simply."
+  >
+
+  <meta
+    name="keywords"
+    content="IT support, Windows troubleshooting, Linux guides, networking, DNS, Wi-Fi, AI, technology, software tutorials, IT guides"
+  >
+
+  <meta name="author" content="Umer">
+
+  <meta name="robots" content="index, follow">
+
+  <meta property="og:title" content="IT Guide by Umer | Practical IT & Technology Guides">
+  <meta
+    property="og:description"
+    content="Practical IT troubleshooting, technology tutorials, networking guides, Windows, Linux and AI explained simply."
+  >
+  <meta property="og:type" content="website">
+
+  <title>IT Guide by Umer | Practical IT & Technology Guides</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<header class="site-header">
-  <div class="container nav-wrap">
-    <a class="logo" href="#" id="logoLink"><span class="logo-mark">TF</span><span>TechFix <b>Daily</b></span></a>
-    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">☰</button>
-    <nav class="nav" id="mainNav" aria-label="Main navigation">
-      <a href="#home" class="nav-link" data-target="home">Home</a>
-      <a href="#categories" class="nav-link" data-target="categories">Categories</a>
-      <a href="#latest" class="nav-link" data-target="latest">Latest</a>
-      <a href="#about" class="nav-link" data-target="about">About</a>
-      <a href="#contact" class="nav-link" data-target="contact">Contact</a>
-    </nav>
-    <div class="header-search">
-      <span>⌕</span>
-      <input type="search" id="headerSearch" placeholder="Search articles...">
-    </div>
-  </div>
-</header>
+  <!-- ==============================
+       HEADER
+  =============================== -->
 
-<main id="homeView">
-  <section class="hero" id="home">
-    <div class="container hero-grid">
+  <header class="site-header">
+
+    <div class="container nav-wrap">
+
+      <a
+        class="logo"
+        href="#home"
+        id="logoLink"
+        aria-label="IT Guide by Umer Home"
+      >
+        <span class="logo-mark">IT</span>
+
+        <span>
+          IT Guide <b>by Umer</b>
+        </span>
+      </a>
+
+      <button
+        class="menu-btn"
+        id="menuBtn"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+      >
+        ☰
+      </button>
+
+      <nav
+        class="nav"
+        id="mainNav"
+        aria-label="Main navigation"
+      >
+
+        <a
+          href="#home"
+          class="nav-link"
+          data-target="home"
+        >
+          Home
+        </a>
+
+        <a
+          href="#categories"
+          class="nav-link"
+          data-target="categories"
+        >
+          Topics
+        </a>
+
+        <a
+          href="#latest"
+          class="nav-link"
+          data-target="latest"
+        >
+          Guides
+        </a>
+
+        <a
+          href="#about"
+          class="nav-link"
+          data-target="about"
+        >
+          About Umer
+        </a>
+
+        <a
+          href="#contact"
+          class="nav-link"
+          data-target="contact"
+        >
+          Contact
+        </a>
+
+      </nav>
+
+      <div class="header-search">
+
+        <span aria-hidden="true">⌕</span>
+
+        <input
+          type="search"
+          id="headerSearch"
+          placeholder="Search IT guides..."
+          aria-label="Search IT guides"
+        >
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <!-- ==============================
+       MAIN WEBSITE
+  =============================== -->
+
+  <main id="homeView">
+
+    <!-- HERO -->
+
+    <section
+      class="hero"
+      id="home"
+    >
+
+      <div class="container hero-grid">
+
+        <div class="hero-content">
+
+          <span class="eyebrow">
+            IT SUPPORT • NETWORKING • WINDOWS • LINUX • AI
+          </span>
+
+          <h1>
+            IT made
+            <span>easier.</span>
+          </h1>
+
+          <p class="hero-text">
+            Welcome to IT Guide by Umer — a practical technology resource
+            created to explain IT problems, troubleshooting techniques,
+            software, networking and modern technology in simple language.
+          </p>
+
+          <p class="hero-text">
+            Whether you're an IT beginner, support technician, student,
+            remote worker or simply trying to fix a technology problem,
+            you'll find straightforward guides you can actually follow.
+          </p>
+
+          <div class="hero-actions">
+
+            <a
+              class="btn primary"
+              href="#latest"
+            >
+              Explore IT Guides
+            </a>
+
+            <a
+              class="btn secondary"
+              href="#categories"
+            >
+              Browse Topics
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <!-- TERMINAL CARD -->
+
+        <div class="terminal-card">
+
+          <div class="terminal-top">
+
+            <i></i>
+            <i></i>
+            <i></i>
+
+            <span>it-guide-by-umer.sh</span>
+
+          </div>
+
+          <pre id="terminalLines"></pre>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ==============================
+         STATS
+    =============================== -->
+
+    <section class="stats">
+
+      <div class="container stats-grid">
+
+        <div>
+          <strong id="articleCount">8</strong>
+          <span>IT Guides</span>
+        </div>
+
+        <div>
+          <strong>6</strong>
+          <span>Technology Topics</span>
+        </div>
+
+        <div>
+          <strong>1000+</strong>
+          <span>Words Per Guide</span>
+        </div>
+
+        <div>
+          <strong>Free</strong>
+          <span>Practical Resources</span>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ==============================
+         CATEGORIES
+    =============================== -->
+
+    <section
+      class="section"
+      id="categories"
+    >
+
+      <div class="container">
+
+        <div class="section-head">
+
+          <div>
+
+            <span class="eyebrow">
+              EXPLORE IT TOPICS
+            </span>
+
+            <h2>
+              Find the guide you need
+            </h2>
+
+          </div>
+
+          <p>
+            Browse practical technology guides covering everyday
+            troubleshooting, IT support and modern technology.
+          </p>
+
+        </div>
+
+        <div
+          class="category-grid"
+          id="categoryGrid"
+        ></div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ==============================
+         LATEST GUIDES
+    =============================== -->
+
+    <section
+      class="section"
+      id="latest"
+    >
+
+      <div class="container">
+
+        <div class="section-head">
+
+          <div>
+
+            <span class="eyebrow">
+              IT GUIDES & TUTORIALS
+            </span>
+
+            <h2>
+              Practical answers to real problems
+            </h2>
+
+          </div>
+
+
+          <div class="filter-wrap">
+
+            <input
+              id="searchInput"
+              type="search"
+              placeholder="Search guides..."
+              aria-label="Search guides"
+            >
+
+            <select
+              id="categoryFilter"
+              aria-label="Filter by topic"
+            >
+
+              <option value="All">
+                All topics
+              </option>
+
+            </select>
+
+          </div>
+
+        </div>
+
+
+        <div
+          id="articleGrid"
+          class="article-grid"
+        ></div>
+
+
+        <p
+          id="noResults"
+          class="no-results"
+          hidden
+        >
+          No guides match your search. Try another keyword or topic.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- ==============================
+         ABOUT THE AUTHOR
+    =============================== -->
+
+    <section
+      class="section about"
+      id="about"
+    >
+
+      <div class="container two-col">
+
+        <div>
+
+          <span class="eyebrow">
+            ABOUT IT GUIDE BY UMER
+          </span>
+
+          <h2>
+            Practical IT knowledge, explained by a technician.
+          </h2>
+
+        </div>
+
+
+        <div>
+
+          <p>
+            I'm Umer, an IT support professional who works with
+            real-world technology problems, troubleshooting,
+            systems, networking and technical support.
+          </p>
+
+          <p>
+            I created IT Guide by Umer to share practical knowledge
+            that can help people understand and solve common technology
+            problems without getting overwhelmed by complicated jargon.
+          </p>
+
+          <p>
+            The guides cover Windows, Linux, networking, IT support,
+            software, AI and other technology topics that are useful
+            for beginners and working professionals.
+          </p>
+
+          <p>
+            My goal is simple:
+            <strong>
+              explain the problem, show the troubleshooting process,
+              and help you understand why the solution works.
+            </strong>
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ==============================
+         WHY THIS WEBSITE
+    =============================== -->
+
+    <section class="section">
+
+      <div class="container">
+
+        <div class="section-head">
+
+          <div>
+
+            <span class="eyebrow">
+              WHY IT GUIDE BY UMER
+            </span>
+
+            <h2>
+              Guides built around practical troubleshooting
+            </h2>
+
+          </div>
+
+        </div>
+
+
+        <div class="category-grid">
+
+          <article class="category-card">
+
+            <div class="category-icon">
+              ✓
+            </div>
+
+            <h3>
+              Practical Steps
+            </h3>
+
+            <p>
+              Follow clear troubleshooting steps instead of
+              guessing what might be wrong.
+            </p>
+
+          </article>
+
+
+          <article class="category-card">
+
+            <div class="category-icon">
+              &lt;/&gt;
+            </div>
+
+            <h3>
+              Useful Commands
+            </h3>
+
+            <p>
+              Learn useful Windows and Linux commands and
+              understand when to use them.
+            </p>
+
+          </article>
+
+
+          <article class="category-card">
+
+            <div class="category-icon">
+              ⚙
+            </div>
+
+            <h3>
+              Real IT Workflows
+            </h3>
+
+            <p>
+              Learn troubleshooting approaches that can be
+              applied to real support situations.
+            </p>
+
+          </article>
+
+
+          <article class="category-card">
+
+            <div class="category-icon">
+              ✦
+            </div>
+
+            <h3>
+              Simple Explanations
+            </h3>
+
+            <p>
+              Technical concepts are explained in straightforward
+              language without unnecessary jargon.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ==============================
+         NEWSLETTER
+    =============================== -->
+
+    <section class="newsletter">
+
+      <div class="container newsletter-box">
+
+        <div>
+
+          <span class="eyebrow">
+            FREE IT & TECHNOLOGY TIPS
+          </span>
+
+          <h2>
+            Get useful IT guides in your inbox.
+          </h2>
+
+          <p>
+            Practical troubleshooting tips, technology guides
+            and useful resources. No unnecessary emails.
+          </p>
+
+        </div>
+
+
+        <form id="newsletterForm">
+
+          <input
+            type="email"
+            id="newsletterEmail"
+            required
+            placeholder="you@example.com"
+            aria-label="Email address"
+          >
+
+          <button
+            class="btn primary"
+            type="submit"
+          >
+            Subscribe
+          </button>
+
+        </form>
+
+      </div>
+
+
+      <p
+        id="newsletterMsg"
+        class="newsletter-msg"
+        hidden
+      ></p>
+
+    </section>
+
+
+    <!-- ==============================
+         CONTACT
+    =============================== -->
+
+    <section
+      class="section contact"
+      id="contact"
+    >
+
+      <div class="container contact-card">
+
+        <div>
+
+          <span class="eyebrow">
+            GET IN TOUCH
+          </span>
+
+          <h2>
+            Have an IT topic you'd like explained?
+          </h2>
+
+          <p>
+            Have a troubleshooting problem, technology question
+            or topic you'd like to see covered?
+            Send me a message.
+          </p>
+
+        </div>
+
+
+        <a
+          class="btn primary"
+          href="mailto:hello@itguidebyumer.com"
+        >
+          Contact Umer
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- ==============================
+       INDIVIDUAL ARTICLE VIEW
+  =============================== -->
+
+  <main
+    id="articleView"
+    hidden
+  >
+
+    <div class="container article-container">
+
+      <button
+        class="back-btn"
+        id="backBtn"
+        type="button"
+      >
+        ← Back to IT Guides
+      </button>
+
+
+      <div
+        id="articleContent"
+      ></div>
+
+
+      <div class="related-block">
+
+        <span class="eyebrow">
+          KEEP LEARNING
+        </span>
+
+        <h2>
+          Related IT Guides
+        </h2>
+
+        <div
+          id="relatedGrid"
+          class="article-grid related-grid"
+        ></div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+
+  <!-- ==============================
+       FOOTER
+  =============================== -->
+
+  <footer>
+
+    <div class="container footer-grid">
+
+
+      <!-- BRAND -->
+
       <div>
-        <span class="eyebrow">IT • AI • NETWORKING • HOW-TO</span>
-        <h1>Technology made <span>simple.</span></h1>
-        <p class="hero-text">Practical troubleshooting guides, technology tutorials, software tips and beginner-friendly IT knowledge — without the confusing jargon.</p>
-        <div class="hero-actions">
-          <a class="btn primary" href="#latest">Explore articles</a>
-          <a class="btn secondary" href="#categories">Browse topics</a>
-        </div>
+
+        <a
+          class="logo"
+          href="#home"
+          aria-label="IT Guide by Umer"
+        >
+
+          <span class="logo-mark">
+            IT
+          </span>
+
+          <span>
+            IT Guide <b>by Umer</b>
+          </span>
+
+        </a>
+
+        <p>
+          Practical IT guides, troubleshooting tutorials
+          and technology resources created by Umer.
+        </p>
+
       </div>
-      <div class="terminal-card">
-        <div class="terminal-top"><i></i><i></i><i></i><span>techfix-index.sh</span></div>
-        <pre id="terminalLines"></pre>
+
+
+      <!-- TOPICS -->
+
+      <div>
+
+        <h4>
+          Topics
+        </h4>
+
+        <div
+          id="footerCategories"
+        ></div>
+
       </div>
-    </div>
-  </section>
 
-  <section class="stats">
-    <div class="container stats-grid">
-      <div><strong>8</strong><span>Articles indexed</span></div>
-      <div><strong>6</strong><span>Topics covered</span></div>
-      <div><strong>47</strong><span>Minutes of reading</span></div>
-      <div><strong>Free</strong><span>Always</span></div>
-    </div>
-  </section>
 
-  <section class="section" id="categories">
-    <div class="container">
-      <div class="section-head">
-        <div><span class="eyebrow">EXPLORE TOPICS</span><h2>Find what you need</h2></div>
-        <p>Choose a topic and discover practical guides written for real-world problems.</p>
+      <!-- INFORMATION -->
+
+      <div>
+
+        <h4>
+          Information
+        </h4>
+
+        <a
+          href="#about"
+          class="nav-link"
+          data-target="about"
+        >
+          About Umer
+        </a>
+
+        <a
+          href="#contact"
+          class="nav-link"
+          data-target="contact"
+        >
+          Contact
+        </a>
+
+        <a href="disclaimer.html">
+          Disclaimer
+        </a>
+
+        <a href="privacy-policy.html">
+          Privacy Policy
+        </a>
+
+        <a href="terms.html">
+          Terms of Use
+        </a>
+
       </div>
-      <div class="category-grid" id="categoryGrid"></div>
-    </div>
-  </section>
 
-  <section class="section" id="latest">
-    <div class="container">
-      <div class="section-head">
-        <div><span class="eyebrow">LATEST GUIDES</span><h2>Practical answers</h2></div>
-        <div class="filter-wrap">
-          <input id="searchInput" type="search" placeholder="Search articles..." aria-label="Search articles">
-          <select id="categoryFilter"><option value="All">All topics</option></select>
-        </div>
+
+      <!-- QUICK DESCRIPTION -->
+
+      <div>
+
+        <h4>
+          IT Guide by Umer
+        </h4>
+
+        <p>
+          Windows • Linux • Networking • AI •
+          IT Support • Software
+        </p>
+
       </div>
-      <div id="articleGrid" class="article-grid"></div>
-      <p id="noResults" class="no-results" hidden>No articles match your search.</p>
+
     </div>
-  </section>
 
-  <section class="newsletter">
-    <div class="container newsletter-box">
-      <div><span class="eyebrow">FREE TECHNOLOGY TIPS</span><h2>Get useful guides in your inbox.</h2><p>No spam. Unsubscribe any time.</p></div>
-      <form id="newsletterForm">
-        <input type="email" id="newsletterEmail" required placeholder="you@company.com" aria-label="Email address">
-        <button class="btn primary" type="submit">Subscribe</button>
-      </form>
+
+    <div class="container copyright">
+
+      © <span id="year"></span>
+      IT Guide by Umer.
+      All rights reserved.
+
     </div>
-    <p id="newsletterMsg" class="newsletter-msg" hidden></p>
-  </section>
 
-  <section class="section about" id="about">
-    <div class="container two-col">
-      <div><span class="eyebrow">ABOUT TECHFIX DAILY</span><h2>Useful technology knowledge without the jargon.</h2></div>
-      <div><p>TechFix Daily is a practical technology publication covering IT support, troubleshooting, networking, Windows, Linux, AI and software.</p><p>The goal is simple: explain technical problems clearly and give readers steps they can actually follow.</p></div>
-    </div>
-  </section>
+  </footer>
 
-  <section class="section contact" id="contact">
-    <div class="container contact-card">
-      <div><span class="eyebrow">CONTACT</span><h2>Have a topic you'd like explained?</h2><p>Send a suggestion and help shape future guides.</p></div>
-      <a class="btn primary" href="mailto:hello@techfixdaily.example">Email TechFix Daily</a>
-    </div>
-  </section>
-</main>
 
-<main id="articleView" hidden>
-  <div class="container article-container">
-    <button class="back-btn" id="backBtn">← Back to all articles</button>
-    <div id="articleContent"></div>
-    <div class="related-block">
-      <span class="eyebrow">KEEP READING</span>
-      <div id="relatedGrid" class="article-grid related-grid"></div>
-    </div>
-  </div>
-</main>
+  <!-- ==============================
+       JAVASCRIPT
+  =============================== -->
 
-<footer>
-  <div class="container footer-grid">
-    <div><a class="logo" href="#"><span class="logo-mark">TF</span><span>TechFix <b>Daily</b></span></a><p>Practical technology guides and troubleshooting resources.</p></div>
-    <div><h4>Topics</h4><div id="footerCategories"></div></div>
-    <div><h4>Information</h4><a href="#about" class="nav-link" data-target="about">About</a><a href="#contact" class="nav-link" data-target="contact">Contact</a></div>
-  </div>
-  <div class="container copyright">© <span id="year"></span> TechFix Daily. All rights reserved.</div>
-</footer>
+  <script src="articles.js"></script>
+  <script src="script.js"></script>
 
-<script src="articles.js"></script>
-<script src="script.js"></script>
 </body>
 </html>
