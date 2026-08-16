@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="TechFix Daily — practical IT troubleshooting guides, Windows, Linux, networking, AI, software and technology tutorials.">
+<meta name="author" content="TechFix Daily">
+<title>TechFix Daily | Practical Technology Guides</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav-wrap">
+    <a class="logo" href="#" id="logoLink"><span class="logo-mark">TF</span><span>TechFix <b>Daily</b></span></a>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">☰</button>
+    <nav class="nav" id="mainNav" aria-label="Main navigation">
+      <a href="#home" class="nav-link" data-target="home">Home</a>
+      <a href="#categories" class="nav-link" data-target="categories">Categories</a>
+      <a href="#latest" class="nav-link" data-target="latest">Latest</a>
+      <a href="#about" class="nav-link" data-target="about">About</a>
+      <a href="#contact" class="nav-link" data-target="contact">Contact</a>
+    </nav>
+    <div class="header-search">
+      <span>⌕</span>
+      <input type="search" id="headerSearch" placeholder="Search articles...">
+    </div>
+  </div>
+</header>
+
+<main id="homeView">
+  <section class="hero" id="home">
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow">IT • AI • NETWORKING • HOW-TO</span>
+        <h1>Technology made <span>simple.</span></h1>
+        <p class="hero-text">Practical troubleshooting guides, technology tutorials, software tips and beginner-friendly IT knowledge — without the confusing jargon.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#latest">Explore articles</a>
+          <a class="btn secondary" href="#categories">Browse topics</a>
+        </div>
+      </div>
+      <div class="terminal-card">
+        <div class="terminal-top"><i></i><i></i><i></i><span>techfix-index.sh</span></div>
+        <pre id="terminalLines"></pre>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats">
+    <div class="container stats-grid">
+      <div><strong>8</strong><span>Articles indexed</span></div>
+      <div><strong>6</strong><span>Topics covered</span></div>
+      <div><strong>47</strong><span>Minutes of reading</span></div>
+      <div><strong>Free</strong><span>Always</span></div>
+    </div>
+  </section>
+
+  <section class="section" id="categories">
+    <div class="container">
+      <div class="section-head">
+        <div><span class="eyebrow">EXPLORE TOPICS</span><h2>Find what you need</h2></div>
+        <p>Choose a topic and discover practical guides written for real-world problems.</p>
+      </div>
+      <div class="category-grid" id="categoryGrid"></div>
+    </div>
+  </section>
+
+  <section class="section" id="latest">
+    <div class="container">
+      <div class="section-head">
+        <div><span class="eyebrow">LATEST GUIDES</span><h2>Practical answers</h2></div>
+        <div class="filter-wrap">
+          <input id="searchInput" type="search" placeholder="Search articles..." aria-label="Search articles">
+          <select id="categoryFilter"><option value="All">All topics</option></select>
+        </div>
+      </div>
+      <div id="articleGrid" class="article-grid"></div>
+      <p id="noResults" class="no-results" hidden>No articles match your search.</p>
+    </div>
+  </section>
+
+  <section class="newsletter">
+    <div class="container newsletter-box">
+      <div><span class="eyebrow">FREE TECHNOLOGY TIPS</span><h2>Get useful guides in your inbox.</h2><p>No spam. Unsubscribe any time.</p></div>
+      <form id="newsletterForm">
+        <input type="email" id="newsletterEmail" required placeholder="you@company.com" aria-label="Email address">
+        <button class="btn primary" type="submit">Subscribe</button>
+      </form>
+    </div>
+    <p id="newsletterMsg" class="newsletter-msg" hidden></p>
+  </section>
+
+  <section class="section about" id="about">
+    <div class="container two-col">
+      <div><span class="eyebrow">ABOUT TECHFIX DAILY</span><h2>Useful technology knowledge without the jargon.</h2></div>
+      <div><p>TechFix Daily is a practical technology publication covering IT support, troubleshooting, networking, Windows, Linux, AI and software.</p><p>The goal is simple: explain technical problems clearly and give readers steps they can actually follow.</p></div>
+    </div>
+  </section>
+
+  <section class="section contact" id="contact">
+    <div class="container contact-card">
+      <div><span class="eyebrow">CONTACT</span><h2>Have a topic you'd like explained?</h2><p>Send a suggestion and help shape future guides.</p></div>
+      <a class="btn primary" href="mailto:hello@techfixdaily.example">Email TechFix Daily</a>
+    </div>
+  </section>
+</main>
+
+<main id="articleView" hidden>
+  <div class="container article-container">
+    <button class="back-btn" id="backBtn">← Back to all articles</button>
+    <div id="articleContent"></div>
+    <div class="related-block">
+      <span class="eyebrow">KEEP READING</span>
+      <div id="relatedGrid" class="article-grid related-grid"></div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container footer-grid">
+    <div><a class="logo" href="#"><span class="logo-mark">TF</span><span>TechFix <b>Daily</b></span></a><p>Practical technology guides and troubleshooting resources.</p></div>
+    <div><h4>Topics</h4><div id="footerCategories"></div></div>
+    <div><h4>Information</h4><a href="#about" class="nav-link" data-target="about">About</a><a href="#contact" class="nav-link" data-target="contact">Contact</a></div>
+  </div>
+  <div class="container copyright">© <span id="year"></span> TechFix Daily. All rights reserved.</div>
+</footer>
+
+<script src="articles.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
