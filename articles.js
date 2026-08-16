@@ -1,12 +1,41 @@
+
 const CATEGORIES = [
-  { name: "Windows", icon: "▣", blurb: "Fix common Windows issues and learn useful settings." },
-  { name: "Linux", icon: "⌘", blurb: "Commands, troubleshooting and beginner-friendly Linux guides." },
-  { name: "Networking", icon: "⌁", blurb: "Wi-Fi, DNS, IP and connectivity troubleshooting." },
-  { name: "AI & Technology", icon: "✦", blurb: "Useful AI tools, tips and practical explainers." },
-  { name: "IT Support", icon: "⚙", blurb: "Practical support workflows and troubleshooting." },
-  { name: "Software & Tools", icon: "▤", blurb: "Guides to useful software and productivity tools." },
+  {
+    name: "Windows",
+    icon: "▣",
+    blurb: "Fix common Windows issues and learn useful settings."
+  },
+
+  {
+    name: "Linux",
+    icon: "⌘",
+    blurb: "Commands, troubleshooting and beginner-friendly Linux guides."
+  },
+
+  {
+    name: "Networking",
+    icon: "⌁",
+    blurb: "Wi-Fi, DNS, IP and connectivity troubleshooting."
+  },
+
+  {
+    name: "AI & Technology",
+    icon: "✦",
+    blurb: "Useful AI tools, tips and practical explainers."
+  },
+
+  {
+    name: "IT Support",
+    icon: "⚙",
+    blurb: "Practical support workflows and troubleshooting."
+  },
+
+  {
+    name: "Software & Tools",
+    icon: "▤",
+    blurb: "Guides to useful software and productivity tools."
+  }
 ];
-const ARTICLES = [
   {
     id: "network-troubleshooting",
     category: "Networking",
