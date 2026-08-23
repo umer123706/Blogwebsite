@@ -1,0 +1,3510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta
+  name="description"
+  content="IT Guide by Umer — practical IT troubleshooting guides, Windows, Linux, networking, AI, software and technology tutorials."
+>
+
+<meta name="author" content="Umer">
+
+<title>IT Guide by Umer | Article</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+  href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+  rel="stylesheet"
+>
+
+<style>
+
+/* =========================================================
+   IT GUIDE BY UMER
+   Original cream + blue visual identity
+   ========================================================= */
+
+:root {
+  --paper: #F6F5F0;
+  --panel: #FFFFFF;
+  --ink: #14181B;
+  --ink-soft: #5B5F57;
+  --line: #E4E1D6;
+
+  --accent: #2F6FED;
+  --accent-bg: #EAF0FF;
+  --accent-deep: #0B1E42;
+
+  --ok: #3FBE72;
+
+  --shadow: 0 8px 30px rgba(20, 24, 27, 0.06);
+  --shadow-hover: 0 14px 40px rgba(20, 24, 27, 0.10);
+}
+
+/* RESET */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+body.no-scroll {
+  overflow: hidden;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button,
+input,
+select {
+  font-family: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* =========================================================
+   TYPOGRAPHY
+   ========================================================= */
+
+.eyebrow {
+  display: inline-block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  padding: 11px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all .2s ease;
+}
+
+.btn.primary {
+  background: var(--ink);
+  color: #fff;
+}
+
+.btn.primary:hover {
+  background: var(--accent-deep);
+  transform: translateY(-1px);
+}
+
+.btn.secondary {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--line);
+}
+
+.btn.secondary:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-bg);
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(246, 245, 240, .94);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+
+.nav-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 68px;
+  gap: 24px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 17px;
+  white-space: nowrap;
+}
+
+.logo-mark {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  background: var(--accent-deep);
+  color: #CFE0FF;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+}
+
+.logo b {
+  color: var(--accent);
+}
+
+.nav {
+  display: flex;
+  gap: 22px;
+}
+
+.nav a {
+  position: relative;
+  font-size: 14px;
+  color: var(--ink-soft);
+  font-weight: 500;
+  transition: color .2s ease;
+}
+
+.nav a:hover,
+.nav a.active {
+  color: var(--accent);
+}
+
+.header-search {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 7px 10px;
+}
+
+.header-search span {
+  color: var(--ink-soft);
+}
+
+.header-search input {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 13px;
+  width: 145px;
+  color: var(--ink);
+}
+
+.menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 22px;
+  color: var(--ink);
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero {
+  padding: 72px 0 50px;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.08fr .92fr;
+  gap: 58px;
+  align-items: center;
+}
+
+.hero h1 {
+  font-size: clamp(38px, 5vw, 58px);
+  line-height: 1.04;
+  letter-spacing: -0.035em;
+  margin: 15px 0 18px;
+  max-width: 650px;
+}
+
+.hero h1 span {
+  color: var(--accent);
+}
+
+.hero-text {
+  font-size: 16px;
+  color: var(--ink-soft);
+  line-height: 1.75;
+  margin: 0 0 26px;
+  max-width: 570px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.hero-note {
+  margin-top: 20px;
+  display: flex;
+  gap: 9px;
+  align-items: center;
+  flex-wrap: wrap;
+
+  font-size: 12px;
+  color: var(--ink-soft);
+}
+
+.hero-note span:first-child {
+  color: var(--ok);
+  font-weight: 700;
+}
+
+/* TERMINAL */
+
+.terminal-card {
+  background: var(--accent-deep);
+  border-radius: 12px;
+  overflow: hidden;
+
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  color: #CFE0FF;
+
+  box-shadow: 0 20px 50px rgba(11, 30, 66, .15);
+}
+
+.terminal-top {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  padding: 11px 14px;
+
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+.terminal-top i {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.terminal-top i:nth-child(1) {
+  background: #E0605A;
+}
+
+.terminal-top i:nth-child(2) {
+  background: #E0A62A;
+}
+
+.terminal-top i:nth-child(3) {
+  background: var(--ok);
+}
+
+.terminal-top span {
+  margin-left: 8px;
+  font-size: 11px;
+  color: #8FA6D6;
+}
+
+.terminal-card pre {
+  margin: 0;
+  padding: 22px 18px;
+  min-height: 190px;
+  line-height: 1.8;
+  white-space: pre-wrap;
+}
+
+/* =========================================================
+   STATS
+   ========================================================= */
+
+.stats {
+  padding: 0 0 62px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+
+  padding: 25px 10px;
+}
+
+.stats-grid div {
+  padding: 0 18px;
+  border-right: 1px solid var(--line);
+}
+
+.stats-grid div:last-child {
+  border-right: none;
+}
+
+.stats-grid strong {
+  display: block;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 24px;
+  color: var(--accent);
+  margin-bottom: 4px;
+}
+
+.stats-grid span {
+  font-size: 12px;
+  color: var(--ink-soft);
+}
+
+/* =========================================================
+   SECTIONS
+   ========================================================= */
+
+.section {
+  padding: 0 0 64px;
+}
+
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  flex-wrap: wrap;
+  gap: 18px;
+
+  margin-bottom: 22px;
+}
+
+.section-head h2 {
+  font-size: 28px;
+  letter-spacing: -.025em;
+  margin-top: 7px;
+}
+
+.section-head p {
+  color: var(--ink-soft);
+  font-size: 14px;
+  line-height: 1.6;
+  max-width: 410px;
+}
+
+/* =========================================================
+   CATEGORIES
+   ========================================================= */
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.category {
+  text-align: left;
+
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+
+  padding: 20px;
+
+  cursor: pointer;
+
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+
+  transition:
+    transform .2s ease,
+    border-color .2s ease,
+    background .2s ease,
+    box-shadow .2s ease;
+}
+
+.category:hover {
+  transform: translateY(-3px);
+  border-color: #B9C9ED;
+  box-shadow: var(--shadow);
+}
+
+.category.active {
+  background: var(--accent-bg);
+  border-color: var(--accent);
+}
+
+.category-icon {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 9px;
+
+  background: var(--accent-bg);
+  color: var(--accent);
+
+  font-size: 20px;
+}
+
+.category h3 {
+  font-size: 16px;
+}
+
+.category p {
+  font-size: 13px;
+  color: var(--ink-soft);
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* =========================================================
+   FILTERS
+   ========================================================= */
+
+.filter-wrap {
+  display: flex;
+  gap: 9px;
+  flex-wrap: wrap;
+}
+
+.filter-wrap input,
+.filter-wrap select {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+
+  padding: 9px 12px;
+
+  font-size: 13px;
+
+  background: var(--panel);
+  color: var(--ink);
+
+  outline: none;
+}
+
+.filter-wrap input:focus,
+.filter-wrap select:focus {
+  border-color: var(--accent);
+}
+
+/* =========================================================
+   ARTICLE CARDS
+   ========================================================= */
+
+.article-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 17px;
+}
+
+.article-card {
+  text-align: left;
+
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+
+  padding: 21px;
+
+  cursor: pointer;
+
+  display: flex;
+  flex-direction: column;
+
+  min-height: 270px;
+
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease,
+    border-color .2s ease;
+}
+
+.article-card:hover {
+  transform: translateY(-4px);
+  border-color: #C5D1EA;
+  box-shadow: var(--shadow-hover);
+}
+
+.article-card .tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+
+  color: var(--accent);
+  background: var(--accent-bg);
+
+  padding: 5px 8px;
+  border-radius: 5px;
+
+  width: fit-content;
+}
+
+.article-card h3 {
+  font-size: 17px;
+  line-height: 1.38;
+  margin: 4px 0 0;
+}
+
+.article-card p {
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  line-height: 1.65;
+
+  margin: 0;
+  flex-grow: 1;
+}
+
+.article-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  font-size: 11px;
+  color: var(--ink-soft);
+
+  border-top: 1px solid var(--line);
+  padding-top: 13px;
+
+  margin-top: 15px;
+}
+
+.read-link {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.no-results {
+  color: var(--ink-soft);
+  font-size: 14px;
+  padding: 25px 0;
+}
+
+/* =========================================================
+   NEWSLETTER
+   ========================================================= */
+
+.newsletter {
+  background: var(--accent-deep);
+  padding: 50px 0;
+  margin-top: 8px;
+}
+
+.newsletter-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  flex-wrap: wrap;
+  gap: 28px;
+}
+
+.newsletter-box h2 {
+  color: #fff;
+  font-size: 26px;
+  margin: 8px 0 6px;
+}
+
+.newsletter-box p {
+  color: #9FB3DC;
+  font-size: 13px;
+  margin: 0;
+}
+
+.newsletter-box form {
+  display: flex;
+  gap: 8px;
+}
+
+.newsletter-box input {
+  border: none;
+  border-radius: 8px;
+
+  padding: 12px 14px;
+
+  font-size: 13px;
+  width: 250px;
+
+  outline: none;
+}
+
+.newsletter-msg {
+  max-width: 1120px;
+  margin: 14px auto 0;
+  padding: 0 24px;
+
+  color: #9FE1CB;
+  font-size: 12px;
+}
+
+/* =========================================================
+   ABOUT
+   ========================================================= */
+
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 55px;
+}
+
+.two-col h2 {
+  font-size: 30px;
+  line-height: 1.2;
+}
+
+.two-col p {
+  font-size: 14px;
+  color: var(--ink-soft);
+  line-height: 1.8;
+}
+
+/* =========================================================
+   CONTACT
+   ========================================================= */
+
+.contact {
+  background: var(--panel);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+
+  padding: 45px 0;
+}
+
+.contact-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.contact-card h2 {
+  font-size: 25px;
+  margin: 7px 0;
+}
+
+.contact-card p {
+  font-size: 14px;
+  color: var(--ink-soft);
+  margin: 0;
+}
+
+/* =========================================================
+   ARTICLE VIEW
+   ========================================================= */
+
+.article-container {
+  max-width: 820px;
+  padding: 42px 24px 85px;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+
+  padding: 0;
+  margin-bottom: 28px;
+
+  color: var(--ink-soft);
+  font-size: 13px;
+}
+
+.back-btn:hover {
+  color: var(--accent);
+}
+
+#articleContent h1 {
+  font-size: clamp(32px, 5vw, 46px);
+  line-height: 1.12;
+  letter-spacing: -.025em;
+  margin: 14px 0 15px;
+}
+
+.article-intro {
+  color: var(--ink-soft);
+  font-size: 17px;
+  line-height: 1.7;
+  margin-bottom: 25px;
+}
+
+.detail-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 15px 0 25px;
+
+  border-bottom: 1px solid var(--line);
+
+  color: var(--ink-soft);
+  font-size: 12px;
+}
+
+.body-section {
+  margin: 34px 0;
+}
+
+.body-section h2 {
+  font-size: 21px;
+  margin-bottom: 11px;
+}
+
+.body-section p {
+  font-size: 15.5px;
+  line-height: 1.85;
+  color: #2C302B;
+  margin: 0;
+}
+
+.body-section code {
+  font-family: 'JetBrains Mono', monospace;
+  background: #ECEAE3;
+  padding: 2px 5px;
+  border-radius: 4px;
+  font-size: .9em;
+}
+
+.related-block {
+  margin-top: 50px;
+  padding-top: 28px;
+
+  border-top: 1px solid var(--line);
+}
+
+.related-grid {
+  margin-top: 15px;
+  grid-template-columns: 1fr 1fr;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+  border-top: 1px solid var(--line);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+
+  gap: 35px;
+
+  padding: 42px 24px 28px;
+}
+
+.footer-grid h4 {
+  font-size: 13px;
+  font-weight: 700;
+  margin: 0 0 10px;
+}
+
+.footer-grid p {
+  font-size: 13px;
+  color: var(--ink-soft);
+  max-width: 290px;
+  line-height: 1.65;
+}
+
+.footer-grid > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-grid a:not(.logo) {
+  font-size: 13px;
+  color: var(--ink-soft);
+  padding: 4px 0;
+}
+
+.footer-grid a:not(.logo):hover {
+  color: var(--accent);
+}
+
+.copyright {
+  padding: 17px 24px;
+
+  border-top: 1px solid var(--line);
+
+  font-size: 12px;
+  color: var(--ink-soft);
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .nav {
+    gap: 15px;
+  }
+
+  .header-search {
+    display: none;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding-top: 55px;
+  }
+
+  .article-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 760px) {
+
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .nav-wrap {
+    min-height: 62px;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+
+  .nav {
+    display: none;
+
+    position: absolute;
+
+    top: 100%;
+    left: 0;
+    right: 0;
+
+    background: var(--panel);
+
+    border-bottom: 1px solid var(--line);
+
+    padding: 8px 20px;
+  }
+
+  .nav.open {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nav a {
+    padding: 13px 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .nav a:last-child {
+    border-bottom: none;
+  }
+
+  .hero {
+    padding: 48px 0 40px;
+  }
+
+  .hero h1 {
+    font-size: 40px;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 20px 0;
+  }
+
+  .stats-grid div {
+    margin: 8px 0;
+  }
+
+  .category-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .article-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .two-col {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .two-col h2 {
+    font-size: 27px;
+  }
+
+  .newsletter-box form {
+    width: 100%;
+  }
+
+  .newsletter-box input {
+    flex: 1;
+    width: auto;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .related-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .article-container {
+    padding-top: 30px;
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .logo {
+    font-size: 15px;
+  }
+
+  .logo-mark {
+    width: 31px;
+    height: 31px;
+  }
+
+  .hero h1 {
+    font-size: 35px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  .newsletter-box form {
+    flex-direction: column;
+  }
+
+  .newsletter-box input,
+  .newsletter-box button {
+    width: 100%;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- =======================================================
+     HEADER
+======================================================= -->
+
+<header class="site-header">
+
+  <div class="container nav-wrap">
+
+    <a class="logo" href="#home" id="logoLink">
+
+      <span class="logo-mark">IU</span>
+
+      <span>
+        IT Guide <b>by Umer</b>
+      </span>
+
+    </a>
+
+    <button
+      class="menu-btn"
+      id="menuBtn"
+      aria-label="Open menu"
+      aria-expanded="false">
+      ☰
+    </button>
+
+    <nav class="nav" id="mainNav">
+
+      <a href="#home" class="nav-link">Home</a>
+
+      <a href="#categories" class="nav-link">
+        Categories
+      </a>
+
+      <a href="#latest" class="nav-link">
+        Latest Guides
+      </a>
+
+      <a href="#about" class="nav-link">
+        About
+      </a>
+
+      <a href="#contact" class="nav-link">
+        Contact
+      </a>
+
+    </nav>
+
+    <div class="header-search">
+
+      <span>⌕</span>
+
+      <input
+        type="search"
+        id="headerSearch"
+        placeholder="Search guides..."
+        aria-label="Search guides">
+
+    </div>
+
+  </div>
+
+</header>
+
+
+<main id="homeView">
+
+<!-- =======================================================
+     HERO
+======================================================= -->
+
+<section class="hero" id="home">
+
+  <div class="container hero-grid">
+
+    <div>
+
+      <span class="eyebrow">
+        IT SUPPORT • NETWORKING • WINDOWS • LINUX • AI
+      </span>
+
+      <h1>
+        Practical IT knowledge,
+        <span>made simple.</span>
+      </h1>
+
+      <p class="hero-text">
+        Welcome to IT Guide by Umer — practical troubleshooting guides,
+        technology tutorials, networking solutions, Windows and Linux tips,
+        AI resources and IT support knowledge explained without unnecessary jargon.
+      </p>
+
+      <div class="hero-actions">
+
+        <a class="btn primary" href="#latest">
+          Explore Guides
+        </a>
+
+        <a class="btn secondary" href="#categories">
+          Browse Topics
+        </a>
+
+      </div>
+
+      <div class="hero-note">
+        <span>✓</span>
+        Beginner-friendly
+        <span>•</span>
+        Practical
+        <span>•</span>
+        Free resources
+      </div>
+
+    </div>
+
+
+    <div class="terminal-card">
+
+      <div class="terminal-top">
+
+        <i></i>
+        <i></i>
+        <i></i>
+
+        <span>it-guide-by-umer.sh</span>
+
+      </div>
+
+      <pre id="terminalLines"></pre>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =======================================================
+     STATS
+======================================================= -->
+
+<section class="stats">
+
+  <div class="container stats-grid">
+
+    <div>
+      <strong id="articleCount">0</strong>
+      <span>Practical Guides</span>
+    </div>
+
+    <div>
+      <strong id="categoryCount">6</strong>
+      <span>IT Topics</span>
+    </div>
+
+    <div>
+      <strong>100%</strong>
+      <span>Free Knowledge</span>
+    </div>
+
+    <div>
+      <strong>24/7</strong>
+      <span>Available Online</span>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =======================================================
+     CATEGORIES
+======================================================= -->
+
+<section class="section" id="categories">
+
+  <div class="container">
+
+    <div class="section-head">
+
+      <div>
+
+        <span class="eyebrow">
+          EXPLORE TOPICS
+        </span>
+
+        <h2>
+          Find what you need
+        </h2>
+
+      </div>
+
+      <p>
+        Choose a topic and discover practical guides
+        written for real-world technology problems.
+      </p>
+
+    </div>
+
+    <div
+      class="category-grid"
+      id="categoryGrid">
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =======================================================
+     ARTICLES
+======================================================= -->
+
+<section class="section" id="latest">
+
+  <div class="container">
+
+    <div class="section-head">
+
+      <div>
+
+        <span class="eyebrow">
+          LATEST GUIDES
+        </span>
+
+        <h2>
+          Practical answers
+        </h2>
+
+      </div>
+
+      <div class="filter-wrap">
+
+        <input
+          id="searchInput"
+          type="search"
+          placeholder="Search guides..."
+          aria-label="Search guides">
+
+        <select id="categoryFilter">
+
+          <option value="All">
+            All topics
+          </option>
+
+        </select>
+
+      </div>
+
+    </div>
+
+
+    <div
+      id="articleGrid"
+      class="article-grid">
+    </div>
+
+
+    <p
+      id="noResults"
+      class="no-results"
+      hidden>
+      No guides match your search.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =======================================================
+     NEWSLETTER
+======================================================= -->
+
+<section class="newsletter">
+
+  <div class="container newsletter-box">
+
+    <div>
+
+      <span class="eyebrow">
+        FREE TECHNOLOGY TIPS
+      </span>
+
+      <h2>
+        Get useful IT guides in your inbox.
+      </h2>
+
+      <p>
+        Practical knowledge. No unnecessary spam.
+      </p>
+
+    </div>
+
+    <form id="newsletterForm">
+
+      <input
+        type="email"
+        id="newsletterEmail"
+        required
+        placeholder="you@example.com"
+        aria-label="Email address">
+
+      <button
+        class="btn primary"
+        type="submit">
+        Subscribe
+      </button>
+
+    </form>
+
+  </div>
+
+  <p
+    id="newsletterMsg"
+    class="newsletter-msg"
+    hidden>
+  </p>
+
+</section>
+
+
+<!-- =======================================================
+     ABOUT
+======================================================= -->
+
+<section class="section about" id="about">
+
+  <div class="container two-col">
+
+    <div>
+
+      <span class="eyebrow">
+        ABOUT IT GUIDE BY UMER
+      </span>
+
+      <h2>
+        Practical technology knowledge
+        for everyday IT problems.
+      </h2>
+
+    </div>
+
+    <div>
+
+      <p>
+        IT Guide by Umer is a practical technology resource
+        designed to make IT troubleshooting and technical
+        concepts easier to understand.
+      </p>
+
+      <p>
+        The guides cover Windows, Linux, networking,
+        AI & technology, IT support, software and useful
+        productivity tools.
+      </p>
+
+      <p>
+        Whether you're an IT beginner, support technician,
+        student, or simply trying to solve a technical problem,
+        the goal is to provide clear information and
+        practical steps that you can actually follow.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =======================================================
+     CONTACT
+======================================================= -->
+
+<section class="section contact" id="contact">
+
+  <div class="container contact-card">
+
+    <div>
+
+      <span class="eyebrow">
+        CONTACT
+      </span>
+
+      <h2>
+        Have a topic you'd like explained?
+      </h2>
+
+      <p>
+        Send a suggestion and help shape future IT guides.
+      </p>
+
+    </div>
+
+    <a
+      class="btn primary"
+      href="mailto:hello@itguidebyumer.com">
+
+      Contact Umer
+
+    </a>
+
+  </div>
+
+</section>
+
+</main>
+
+
+<!-- =======================================================
+     ARTICLE VIEW
+======================================================= -->
+
+<main id="articleView" hidden>
+
+  <div class="container article-container">
+
+    <button
+      class="back-btn" onclick="window.location.href='index.html'"
+      id="backBtn">
+      ← Back to all guides
+    </button>
+
+    <div id="articleContent"></div>
+
+    <div class="related-block">
+
+      <span class="eyebrow">
+        KEEP READING
+      </span>
+
+      <div
+        id="relatedGrid"
+        class="article-grid related-grid">
+      </div>
+
+    </div>
+
+  </div>
+
+</main>
+
+
+<!-- =======================================================
+     FOOTER
+======================================================= -->
+
+<footer>
+
+  <div class="container footer-grid">
+
+    <div>
+
+      <a class="logo" href="#home">
+
+        <span class="logo-mark">
+          IU
+        </span>
+
+        <span>
+          IT Guide <b>by Umer</b>
+        </span>
+
+      </a>
+
+      <p>
+        Practical IT guides, troubleshooting resources,
+        technology tutorials and useful technical knowledge.
+      </p>
+
+    </div>
+
+
+    <div>
+
+      <h4>
+        Topics
+      </h4>
+
+      <div id="footerCategories"></div>
+
+    </div>
+
+
+    <div>
+
+      <h4>
+        Information
+      </h4>
+
+      <a href="#about">
+        About
+      </a>
+
+      <a href="#contact">
+        Contact
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <div class="container copyright">
+
+    © <span id="year"></span>
+    IT Guide by Umer.
+    All rights reserved.
+
+  </div>
+
+</footer>
+
+
+<script>
+
+/* =========================================================
+   CATEGORIES
+========================================================= */
+
+const CATEGORIES = [
+
+  {
+    name: "Windows",
+    icon: "▣",
+    blurb:
+      "Fix common Windows issues and learn useful settings."
+  },
+
+  {
+    name: "Linux",
+    icon: "⌘",
+    blurb:
+      "Commands, troubleshooting and beginner-friendly Linux guides."
+  },
+
+  {
+    name: "Networking",
+    icon: "⌁",
+    blurb:
+      "Wi-Fi, DNS, IP and connectivity troubleshooting."
+  },
+
+  {
+    name: "AI & Technology",
+    icon: "✦",
+    blurb:
+      "Useful AI tools, tips and practical technology explainers."
+  },
+
+  {
+    name: "IT Support",
+    icon: "⚙",
+    blurb:
+      "Practical support workflows, documentation and troubleshooting."
+  },
+
+  {
+    name: "Software & Tools",
+    icon: "▤",
+    blurb:
+      "Guides to useful software and productivity tools."
+  }
+
+];
+
+
+/* =========================================================
+   ARTICLES
+========================================================= */
+
+const ARTICLES = [
+
+  {
+    id: "network-troubleshooting",
+
+    category: "Networking",
+
+    title:
+      "How to Troubleshoot a Network Connection: A Beginner's Guide",
+
+    excerpt:
+      "A practical process for checking cables, adapters, IP configuration, DNS, ping and routing before escalating a network issue.",
+
+    readTime: 12,
+
+    level: "Beginner",
+
+    body: [
+
+      {
+        h: "Introduction: Start With the Symptoms",
+
+        p:
+          "When a network connection stops working, the first step should not be randomly changing settings. Start by understanding exactly what is happening. Determine whether one computer is affected or whether multiple devices have the same problem. Check whether the connection is completely unavailable, slow, or disconnecting periodically. These details help narrow down the possible causes."
+      },
+
+      {
+        h: "1. Check the Physical Connection",
+
+        p:
+          "For Ethernet connections, check that both ends of the cable are securely connected. Inspect the Ethernet port and look for link or activity lights. If possible, test another known-good cable. For Wi-Fi, confirm that Wi-Fi is enabled, airplane mode is disabled and the device is connected to the correct wireless network."
+      },
+
+      {
+        h: "2. Determine Whether One Device or the Entire Network Is Affected",
+
+        p:
+          "Test another phone, laptop or computer on the same network. If every device is offline, investigate the router, modem, gateway or internet service. If only one computer is affected, focus troubleshooting on that computer. This simple comparison prevents unnecessary changes to a healthy network."
+      },
+
+      {
+        h: "3. Check the Network Adapter",
+
+        p:
+          "On Windows, open Device Manager and check Network adapters for warning symbols or disabled devices. On Linux, use ip link show to inspect network interfaces. A missing adapter may indicate a driver, hardware, BIOS or physical connection problem."
+      },
+
+      {
+        h: "4. Check Your IP Configuration",
+
+        p:
+          "On Windows, run ipconfig or ipconfig /all. On Linux, use ip addr. Look for an IPv4 address, subnet mask, default gateway and DNS information. A Windows address beginning with 169.254 usually indicates that the device did not receive an address from DHCP."
+      },
+
+      {
+        h: "5. Test the Default Gateway",
+
+        p:
+          "The default gateway is normally the router or network device connecting your local network to other networks. Find the gateway address using ipconfig or ip route and test it with ping. If the gateway cannot be reached, focus on the local connection."
+      },
+
+      {
+        h: "6. Troubleshoot DNS",
+
+        p:
+          "DNS translates domain names into IP addresses. If an IP address is reachable but a domain name cannot be resolved, DNS becomes a strong suspect. On Windows, nslookup can help determine whether DNS resolution is working."
+      },
+
+      {
+        h: "7. Use Ping Correctly",
+
+        p:
+          "A useful sequence is to ping your local gateway, then an external IP address and finally a domain name. This helps identify where connectivity is failing. Remember that some systems block ICMP, so a failed ping does not automatically mean the destination is offline."
+      },
+
+      {
+        h: "8. Investigate Routing",
+
+        p:
+          "Windows provides tracert for examining the path between your computer and another destination. Linux provides traceroute or tracepath depending on the distribution. These tools can help identify where latency or packet loss begins, although individual timeouts do not automatically prove that a router is broken."
+      },
+
+      {
+        h: "9. Troubleshoot Wi-Fi Separately",
+
+        p:
+          "If the problem only occurs over Wi-Fi, compare performance close to the access point and farther away. Signal strength, walls, interference, channel congestion and client hardware can all affect wireless performance."
+      },
+
+      {
+        h: "10. Compare Wired and Wireless Connections",
+
+        p:
+          "Testing Ethernet against Wi-Fi is an excellent isolation technique. If Ethernet works normally while Wi-Fi remains slow, the internet service may be healthy and the investigation should focus on wireless conditions."
+      },
+
+      {
+        h: "11. Check Background Network Usage",
+
+        p:
+          "Cloud synchronization, operating system updates, backups and large downloads can consume bandwidth. Check Task Manager on Windows or appropriate system monitoring tools on Linux before concluding that the connection itself is failing."
+      },
+
+      {
+        h: "12. Avoid Changing Multiple Things at Once",
+
+        p:
+          "One of the biggest troubleshooting mistakes is changing DNS, reinstalling drivers, resetting TCP/IP and restarting network equipment simultaneously. Make one controlled change at a time so you know what actually solved the problem."
+      },
+
+      {
+        h: "13. When Should You Escalate?",
+
+        p:
+          "Escalate when multiple users are affected, an ISP connection appears unstable, managed network configuration must be changed, or hardware appears faulty. Document the symptoms, affected devices, start time and troubleshooting already completed."
+      },
+
+      {
+        h: "Conclusion",
+
+        p:
+          "Good network troubleshooting follows a logical path. Start with physical connections, determine the scope, verify the adapter and IP configuration, test the gateway, investigate DNS and then examine external routing. The goal is not simply to restore connectivity but to understand why the failure occurred."
+      }
+
+    ]
+
+  },
+
+
+  {
+    id: "windows-boot-recovery",
+
+    category: "Windows",
+
+    title:
+      "Windows Won't Boot? A Step-by-Step Recovery Checklist",
+
+    excerpt:
+      "A practical checklist for black screens, boot loops, startup failures, corrupted files and Windows recovery problems.",
+
+    readTime: 11,
+
+    level: "Intermediate",
+
+    body: [
+
+      {
+        h: "Introduction: Don't Reinstall Windows Yet",
+
+        p:
+          "A Windows computer that refuses to boot can look serious, but many startup problems can be repaired without wiping the machine. First determine whether the computer reaches the manufacturer logo, Windows logo, login screen or recovery environment."
+      },
+
+      {
+        h: "1. Identify Exactly What Happens During Startup",
+
+        p:
+          "Observe the startup sequence. Does the machine power on? Does the manufacturer logo appear? Does Windows begin loading before displaying an error? Does the computer restart continuously? These symptoms point toward different categories of problems."
+      },
+
+      {
+        h: "2. Disconnect Unnecessary External Devices",
+
+        p:
+          "USB drives, external hard drives, docking stations and other peripherals can occasionally interfere with startup. Disconnect unnecessary devices and test again."
+      },
+
+      {
+        h: "3. Enter Windows Recovery Environment",
+
+        p:
+          "Windows Recovery Environment provides tools such as Startup Repair, System Restore, Uninstall Updates, Command Prompt and Startup Settings. Use the least destructive option that matches the problem."
+      },
+
+      {
+        h: "4. Try Startup Repair",
+
+        p:
+          "Startup Repair is designed to identify and repair common startup problems. Allow it to complete before restarting the computer."
+      },
+
+      {
+        h: "5. Investigate Recent Updates",
+
+        p:
+          "If the computer stopped booting immediately after a Windows update or driver installation, that timing is important. Recovery options may allow you to uninstall the recent update or use System Restore."
+      },
+
+      {
+        h: "6. Check System Files",
+
+        p:
+          "Corrupted Windows system files can cause startup failures. Recovery environments provide tools such as System File Checker and DISM. Verify the correct Windows partition before running offline repair commands."
+      },
+
+      {
+        h: "7. Check the Storage Device",
+
+        p:
+          "A failing SSD or hard drive can cause boot failures, freezes, blue screens and corrupted files. Check whether the drive is detected in BIOS or UEFI and use vendor diagnostics when available."
+      },
+
+      {
+        h: "8. Try Safe Mode",
+
+        p:
+          "Safe Mode loads Windows with a limited set of drivers and services. If the machine works in Safe Mode but fails normally, recently installed drivers, applications or services become stronger suspects."
+      },
+
+      {
+        h: "9. Avoid Immediate Reinstallation",
+
+        p:
+          "Reinstalling Windows can remove applications, settings and potentially data. Protect important information and investigate less destructive options first."
+      },
+
+      {
+        h: "10. When Hardware Failure Becomes More Likely",
+
+        p:
+          "If the storage device is not detected, diagnostics report errors or the machine continues to crash after operating-system repair, hardware failure becomes more likely."
+      },
+
+      {
+        h: "Conclusion",
+
+        p:
+          "Windows startup problems should be approached methodically. Identify where startup stops, enter recovery mode, investigate recent changes, check system files and storage health, and only consider reinstallation after important data has been protected."
+      }
+
+    ]
+
+  },
+
+
+  {
+    id: "linux-commands-beginners",
+
+    category: "Linux",
+
+    title:
+      "10 Linux Commands Every IT Beginner Should Know",
+
+    excerpt:
+      "A practical beginner's guide to Linux commands used for navigation, files, processes, storage, permissions and networking.",
+
+    readTime: 10,
+
+    level: "Beginner",
+
+    body: [
+
+      {
+        h: "Introduction",
+
+        p:
+          "Linux can appear intimidating when you first encounter a terminal. The good news is that a relatively small collection of commands covers many everyday IT support and administration tasks."
+      },
+
+      {
+        h: "1. pwd",
+
+        p:
+          "pwd means print working directory. It tells you exactly where you are in the Linux file system. Confirming your location before modifying files is a useful safety habit."
+      },
+
+      {
+        h: "2. ls",
+
+        p:
+          "The ls command lists files and directories. Using ls -la provides detailed information including hidden files, ownership, permissions and timestamps."
+      },
+
+      {
+        h: "3. cd",
+
+        p:
+          "The cd command changes directories. cd .. moves one level upward while cd ~ returns to the home directory."
+      },
+
+      {
+        h: "4. cat and less",
+
+        p:
+          "cat displays short files while less is more practical for long logs and configuration files."
+      },
+
+      {
+        h: "5. grep",
+
+        p:
+          "grep searches text for patterns. It is especially useful when investigating large log files."
+      },
+
+      {
+        h: "6. ps and top",
+
+        p:
+          "ps aux provides a snapshot of running processes while top provides continuously updated information about CPU and memory usage."
+      },
+
+      {
+        h: "7. df",
+
+        p:
+          "df -h shows available and used disk space. A full file system can cause applications and services to fail."
+      },
+
+      {
+        h: "8. free",
+
+        p:
+          "free -h shows memory and swap information. High memory usage should be interpreted together with overall system behavior."
+      },
+
+      {
+        h: "9. chmod and chown",
+
+        p:
+          "chmod changes permissions while chown changes file ownership. These commands should be used carefully because incorrect permissions can break applications or create security risks."
+      },
+
+      {
+        h: "10. ip and ping",
+
+        p:
+          "ip addr shows network interfaces and addresses while ping tests basic reachability. Together they provide a useful starting point for Linux network troubleshooting."
+      },
+
+      {
+        h: "Conclusion",
+
+        p:
+          "These commands form a strong foundation for Linux troubleshooting. As your experience grows, combine them with pipes, redirects and scripts to automate repetitive tasks."
+      }
+
+    ]
+
+  },
+
+
+  {
+    id: "ai-tools-it-support",
+
+    category: "AI & Technology",
+
+    title:
+      "How AI Tools Can Help IT Support Technicians Work Faster",
+
+    excerpt:
+      "Practical ways AI can help with troubleshooting, documentation, scripts, ticket summaries and technical research.",
+
+    readTime: 9,
+
+    level: "Beginner",
+
+    body: [
+
+      {
+        h: "Introduction",
+
+        p:
+          "Artificial intelligence is becoming a useful assistant for IT professionals. It does not replace technical judgment, but it can reduce the time spent on repetitive tasks."
+      },
+
+      {
+        h: "1. Summarizing Support Tickets",
+
+        p:
+          "AI can turn long troubleshooting notes into concise summaries containing the symptoms, troubleshooting performed, results and next action."
+      },
+
+      {
+        h: "2. Creating Technical Documentation",
+
+        p:
+          "Technicians can use AI to organize rough notes into standard operating procedures, knowledge-base articles and troubleshooting checklists."
+      },
+
+      {
+        h: "3. Explaining Error Messages",
+
+        p:
+          "AI can provide context around unfamiliar error messages and suggest areas to investigate. Always verify suggestions against official documentation and system evidence."
+      },
+
+      {
+        h: "4. Writing Scripts",
+
+        p:
+          "AI can help draft PowerShell, Bash or Python scripts for repetitive administrative tasks. Test scripts in a safe environment before deploying them."
+      },
+
+      {
+        h: "5. Creating Troubleshooting Checklists",
+
+        p:
+          "AI can transform a technical problem into a logical sequence of diagnostic steps, helping technicians avoid skipping basic checks."
+      },
+
+      {
+        h: "6. Research Assistance",
+
+        p:
+          "AI can help identify useful keywords, concepts and documentation to investigate. It should be treated as a starting point rather than an authoritative source."
+      },
+
+      {
+        h: "7. Important Security Considerations",
+
+        p:
+          "Never paste passwords, API keys, customer personal information, private credentials or confidential company data into an AI service unless your organization explicitly permits it."
+      },
+
+      {
+        h: "Conclusion",
+
+        p:
+          "AI is most valuable when it handles repetitive work while the technician remains responsible for verification, security and final decisions."
+      }
+
+    ]
+
+  },
+
+
+  {
+    id: "writing-support-tickets",
+
+    category: "IT Support",
+
+    title:
+      "How to Write a Support Ticket That Gets Fixed Faster",
+
+    excerpt:
+      "The details that help technicians solve problems quickly instead of going through repeated back-and-forth questions.",
+
+    readTime: 7,
+
+    level: "Beginner",
+
+    body: [
+
+      {
+        h: "Describe the Problem Clearly",
+
+        p:
+          "Describe what actually happened instead of starting with a theory. For example, 'The printer does not print' gives the technician a clear symptom to investigate."
+      },
+
+      {
+        h: "Include the Exact Error",
+
+        p:
+          "Provide the exact error message or a screenshot whenever possible. Small wording differences can identify completely different causes."
+      },
+
+      {
+        h: "Explain What You Already Tried",
+
+        p:
+          "Mention restarts, cable checks, application resets or other troubleshooting already completed. This prevents support from repeating the same steps."
+      },
+
+      {
+        h: "Include Timing",
+
+        p:
+          "Record when the problem started and whether it happens constantly or intermittently."
+      },
+
+      {
+        h: "Explain the Business Impact",
+
+        p:
+          "State how the issue affects your work. This helps support teams prioritize incidents appropriately."
+      },
+
+      {
+        h: "Conclusion",
+
+        p:
+          "A good ticket gives the next technician enough information to understand the problem before contacting you. Clear tickets lead to faster troubleshooting and better documentation."
+      }
+
+    ]
+
+  },
+
+
+  {
+    id: "password-manager",
+
+    category: "Software & Tools",
+
+    title:
+      "Choosing the Right Password Manager for Your Team",
+
+    excerpt:
+      "What actually matters when comparing password managers for a small team beyond the marketing page.",
+
+    readTime: 7,
+
+    level: "Beginner",
+
+    body: [
+
+      {
+        h: "Why Password Managers Matter",
+
+        p:
+          "Password managers make it easier to use strong unique passwords without requiring users to memorize every credential."
+      },
+
+      {
+        h: "Shared Vaults",
+
+        p:
+          "Teams should be able to share access securely rather than sending passwords through email or chat."
+      },
+
+      {
+        h: "Administrative Controls",
+
+        p:
+          "Look for the ability to add and remove users, manage permissions and revoke access when employees leave."
+      },
+
+      {
+        h: "Encryption",
+
+        p:
+          "Understand how the provider protects stored credentials and where encryption occurs."
+      },
+
+      {
+        h: "Multi-Factor Authentication",
+
+        p:
+          "MFA provides an additional security layer if a password is compromised."
+      },
+
+      {
+        h: "Conclusion",
+
+        p:
+          "Choose a password manager based on security architecture, administration, recovery options, usability and the workflows your team actually needs."
+      }
+
+    ]
+
+  },
+
+
+  {
+    id: "windows-update-errors",
+
+    category: "Windows",
+
+    title:
+      "Understanding Windows Update Errors and How to Fix Them",
+
+    excerpt:
+      "The common causes behind failed Windows updates and the troubleshooting order to follow.",
+
+    readTime: 8,
+
+    level: "Intermediate",
+
+    body: [
+
+      {
+        h: "Check Available Disk Space",
+
+        p:
+          "Large Windows updates may require several gigabytes of free space. A nearly full system drive can prevent updates from staging correctly."
+      },
+
+      {
+        h: "Restart the Computer",
+
+        p:
+          "Some updates remain pending until Windows restarts. A proper restart should be one of the first simple checks."
+      },
+
+      {
+        h: "Check Windows Update Services",
+
+        p:
+          "Update services need to be running correctly. If they become stuck, the update process may repeatedly fail."
+      },
+
+      {
+        h: "Clear the Update Cache",
+
+        p:
+          "A corrupted update download can cause repeated failures. Resetting the appropriate Windows Update cache can force Windows to download fresh files."
+      },
+
+      {
+        h: "Repair System Files",
+
+        p:
+          "System File Checker and DISM can help repair Windows components required by the update process."
+      },
+
+      {
+        h: "Conclusion",
+
+        p:
+          "Work from simple causes toward more advanced repairs. Avoid randomly changing multiple Windows components at once."
+      }
+
+    ]
+
+  },
+
+
+  {
+    id: "remote-work-security",
+
+    category: "IT Support",
+
+    title:
+      "Remote Work IT Checklist: Securing a Home Office Setup",
+
+    excerpt:
+      "A practical checklist for making a home office setup safer and more reliable.",
+
+    readTime: 7,
+
+    level: "Intermediate",
+
+    body: [
+
+      {
+        h: "Secure the Router",
+
+        p:
+          "Change default administrator credentials, use modern wireless encryption and keep router firmware reasonably current."
+      },
+
+      {
+        h: "Keep Devices Updated",
+
+        p:
+          "Operating system and application updates often include security fixes. Delaying important updates can leave known vulnerabilities exposed."
+      },
+
+      {
+        h: "Use MFA",
+
+        p:
+          "Multi-factor authentication protects accounts even when passwords are compromised."
+      },
+
+      {
+        h: "Use a VPN When Required",
+
+        p:
+          "Organizations may require VPN access for internal applications and protected resources. Follow company security policies."
+      },
+
+      {
+        h: "Protect Physical Devices",
+
+        p:
+          "Use device encryption, screen locking and secure storage when working remotely."
+      },
+
+      {
+        h: "Conclusion",
+
+        p:
+          "Remote security is not about making a home office impossible to use. It is about applying practical protections that reduce common risks."
+      }
+
+    ]
+
+  },
+
+
+  {
+    id: "ip-address-guide",
+
+    category: "Networking",
+
+    title:
+      "IP Addresses Explained: IPv4, IPv6, DHCP, DNS and Gateways",
+
+    excerpt:
+      "A beginner-friendly explanation of the network settings every IT support technician should understand.",
+
+    readTime: 10,
+
+    level: "Beginner",
+
+    body: [
+
+      {
+        h: "What Is an IP Address?",
+
+        p:
+          "An IP address identifies a device on a network and allows network traffic to be delivered to the appropriate destination."
+      },
+
+      {
+        h: "IPv4",
+
+        p:
+          "IPv4 uses 32-bit addresses commonly written in four decimal sections such as 192.168.1.10."
+      },
+
+      {
+        h: "Private Addresses",
+
+        p:
+          "Private IPv4 ranges are commonly used inside homes and businesses. Routers normally translate private addresses to public addresses when devices access the internet."
+      },
+
+      {
+        h: "DHCP",
+
+        p:
+          "DHCP automatically provides devices with network configuration such as an IP address, subnet mask, gateway and DNS server."
+      },
+
+      {
+        h: "DNS",
+
+        p:
+          "DNS translates human-readable domain names into IP addresses."
+      },
+
+      {
+        h: "Default Gateway",
+
+        p:
+          "The default gateway is normally the router responsible for forwarding traffic outside the local network."
+      },
+
+      {
+        h: "IPv6",
+
+        p:
+          "IPv6 provides a much larger address space than IPv4 and is increasingly deployed alongside or instead of IPv4."
+      },
+
+      {
+        h: "Conclusion",
+
+        p:
+          "Understanding IP addresses, DHCP, DNS and gateways provides one of the most important foundations for IT support and networking troubleshooting."
+      }
+
+    ]
+
+  },
+
+  {
+    id: "wifi-slow",
+
+    category: "Networking",
+
+    title:
+      "Why Is My Wi-Fi So Slow? A Complete Troubleshooting Guide",
+
+    excerpt:
+      "Learn how to diagnose slow Wi-Fi caused by signal strength, interference, congestion, hardware and configuration.",
+
+    readTime: 10,
+
+    level: "Beginner",
+
+    body: [
+
+      {
+        h: "Check Signal Strength",
+
+        p:
+          "Weak wireless signals can cause reduced speeds and unstable connections. Test close to the access point and compare the results."
+      },
+
+      {
+        h: "Look for Interference",
+
+        p:
+          "Nearby wireless networks, physical obstacles and some electronic devices can affect wireless performance."
+      },
+
+      {
+        h: "Check Multiple Devices",
+
+        p:
+          "If only one device is slow, focus on that device. If every device is slow, investigate the access point or internet connection."
+      },
+
+      {
+        h: "Compare Ethernet",
+
+        p:
+          "An Ethernet test is an excellent way to determine whether the problem is Wi-Fi-specific."
+      },
+
+      {
+        h: "Check Background Downloads",
+
+        p:
+          "Operating system updates, cloud synchronization and large downloads can consume bandwidth."
+      },
+
+      {
+        h: "Conclusion",
+
+        p:
+          "Good Wi-Fi troubleshooting combines signal testing, device comparison, wired testing and careful observation rather than relying on a single speed test."
+      }
+
+    ]
+
+  },
+
+  {
+    id: "prompt-engineering",
+
+    category: "AI & Technology",
+
+    title:
+      "Prompt Engineering for Beginners: How to Get Better Results From AI",
+
+    excerpt:
+      "Learn how to write clearer prompts, provide context, request useful formats and verify AI-generated information.",
+
+    readTime: 8,
+
+    level: "Beginner",
+
+    body: [
+
+      {
+        h: "Give the AI Context",
+
+        p:
+          "A vague prompt usually produces a generic response. Explain the task, audience, goal and important constraints."
+      },
+
+      {
+        h: "Describe the Desired Output",
+
+        p:
+          "Tell the AI whether you want a checklist, table, email, technical explanation, script or step-by-step guide."
+      },
+
+      {
+        h: "Provide Examples",
+
+        p:
+          "Examples show the system the style, structure and level of detail you want."
+      },
+
+      {
+        h: "Ask for Step-by-Step Reasoning Without Sensitive Information",
+
+        p:
+          "For technical tasks, asking for assumptions, checks and verification steps can make the result more useful."
+      },
+
+      {
+        h: "Verify Important Information",
+
+        p:
+          "AI can produce incorrect information. Verify important technical, financial, security or business information using reliable sources."
+      },
+
+      {
+        h: "Conclusion",
+
+        p:
+          "Better prompts are usually clearer prompts. Explain the objective, provide relevant context and specify the format you want."
+      }
+
+    ]
+
+  },
+
+  {
+    id: "ai-cybersecurity",
+
+    category: "AI & Technology",
+
+    title:
+      "AI and Cybersecurity: How Artificial Intelligence Is Changing IT Security",
+
+    excerpt:
+      "Explore how AI is being used for threat detection, security operations, automation and defensive analysis.",
+
+    readTime: 10,
+
+    level: "Intermediate",
+
+    body: [
+
+      {
+        h: "AI in Security Operations",
+
+        p:
+          "Security teams can use machine learning and AI-assisted tools to analyze large volumes of logs and identify unusual patterns."
+      },
+
+      {
+        h: "Threat Detection",
+
+        p:
+          "AI systems can help identify behavior that differs from established baselines and prioritize alerts for analysts."
+      },
+
+      {
+        h: "Security Automation",
+
+        p:
+          "Repetitive security tasks such as alert classification, log summarization and initial investigation can be partially automated."
+      },
+
+      {
+        h: "Human Oversight Still Matters",
+
+        p:
+          "AI systems can generate false positives or misunderstand context. Security professionals must review important decisions."
+      },
+
+      {
+        h: "Protecting Sensitive Data",
+
+        p:
+          "Organizations need clear policies for what information can be processed by AI systems."
+      },
+
+      {
+        h: "Conclusion",
+
+        p:
+          "AI can improve security operations, but it works best as an assistant to trained security professionals rather than an autonomous replacement."
+      }
+
+    ]
+
+  }
+
+];
+
+
+/* =========================================================
+   DOM ELEMENTS
+========================================================= */
+
+const categoryGrid =
+  document.getElementById("categoryGrid");
+
+const articleGrid =
+  document.getElementById("articleGrid");
+
+const categoryFilter =
+  document.getElementById("categoryFilter");
+
+const searchInput =
+  document.getElementById("searchInput");
+
+const headerSearch =
+  document.getElementById("headerSearch");
+
+const noResults =
+  document.getElementById("noResults");
+
+const homeView =
+  document.getElementById("homeView");
+
+const articleView =
+  document.getElementById("articleView");
+
+const articleContent =
+  document.getElementById("articleContent");
+
+const relatedGrid =
+  document.getElementById("relatedGrid");
+
+const backBtn =
+  document.getElementById("backBtn");
+
+const menuBtn =
+  document.getElementById("menuBtn");
+
+const mainNav =
+  document.getElementById("mainNav");
+
+
+/* =========================================================
+   CATEGORY RENDER
+========================================================= */
+
+function renderCategories() {
+
+  categoryGrid.innerHTML = "";
+
+  CATEGORIES.forEach(category => {
+
+    const card =
+      document.createElement("button");
+
+    card.className = "category";
+
+    card.innerHTML = `
+      <span class="category-icon">
+        ${category.icon}
+      </span>
+
+      <h3>
+        ${category.name}
+      </h3>
+
+      <p>
+        ${category.blurb}
+      </p>
+    `;
+
+    card.addEventListener("click", () => {
+
+      categoryFilter.value =
+        category.name;
+
+      renderArticles();
+
+      document
+        .getElementById("latest")
+        .scrollIntoView({
+          behavior: "smooth"
+        });
+
+    });
+
+    categoryGrid.appendChild(card);
+
+  });
+
+}
+
+
+/* =========================================================
+   FILTER OPTIONS
+========================================================= */
+
+function renderFilterOptions() {
+
+  CATEGORIES.forEach(category => {
+
+    const option =
+      document.createElement("option");
+
+    option.value =
+      category.name;
+
+    option.textContent =
+      category.name;
+
+    categoryFilter.appendChild(option);
+
+  });
+
+}
+
+
+/* =========================================================
+   ARTICLE CARDS
+========================================================= */
+
+function createArticleCard(article) {
+
+  const card =
+    document.createElement("article");
+
+  card.className = "article-card";
+
+  card.innerHTML = `
+
+    <span class="tag">
+      ${article.category}
+    </span>
+
+    <h3>
+      ${article.title}
+    </h3>
+
+    <p>
+      ${article.excerpt}
+    </p>
+
+    <div class="article-meta">
+
+      <span>
+        ${article.level}
+        ·
+        ${article.readTime} min read
+      </span>
+
+      <span class="read-link">
+        Read guide →
+      </span>
+
+    </div>
+
+  `;
+
+  card.addEventListener("click", () => {
+
+    openArticle(article.id);
+
+  });
+
+  return card;
+
+}
+
+
+/* =========================================================
+   ARTICLE RENDER
+========================================================= */
+
+function renderArticles() {
+
+  const query =
+    searchInput.value
+      .trim()
+      .toLowerCase();
+
+  const category =
+    categoryFilter.value;
+
+  const filtered =
+    ARTICLES.filter(article => {
+
+      const matchesCategory =
+        category === "All" ||
+        article.category === category;
+
+      const text =
+        (
+          article.title +
+          " " +
+          article.excerpt +
+          " " +
+          article.category
+        ).toLowerCase();
+
+      const matchesSearch =
+        !query ||
+        text.includes(query);
+
+      return matchesCategory &&
+             matchesSearch;
+
+    });
+
+
+  articleGrid.innerHTML = "";
+
+  filtered.forEach(article => {
+
+    articleGrid.appendChild(
+      createArticleCard(article)
+    );
+
+  });
+
+
+  noResults.hidden =
+    filtered.length !== 0;
+
+}
+
+
+/* =========================================================
+   OPEN ARTICLE
+========================================================= */
+
+function openArticle(id) {
+
+  const article =
+    ARTICLES.find(item => item.id === id);
+
+  if (!article) return;
+
+
+  homeView.hidden = true;
+
+  articleView.hidden = false;
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+
+
+  articleContent.innerHTML = `
+
+    <span class="eyebrow">
+      ${article.category.toUpperCase()}
+    </span>
+
+    <h1>
+      ${article.title}
+    </h1>
+
+    <p class="article-intro">
+      ${article.excerpt}
+    </p>
+
+    <div class="detail-meta">
+
+      <span>
+        ${article.level}
+      </span>
+
+      <span>•</span>
+
+      <span>
+        ${article.readTime} minute read
+      </span>
+
+      <span>•</span>
+
+      <span>
+        IT Guide by Umer
+      </span>
+
+    </div>
+
+    <div class="article-body">
+
+      ${article.body.map(section => `
+
+        <section class="body-section">
+
+          <h2>
+            ${section.h}
+          </h2>
+
+          <p>
+            ${formatText(section.p)}
+          </p>
+
+        </section>
+
+      `).join("")}
+
+    </div>
+
+  `;
+
+
+  renderRelated(article);
+
+}
+
+
+/* =========================================================
+   SIMPLE CODE FORMATTING
+========================================================= */
+
+function formatText(text) {
+
+  return text.replace(
+    /`([^`]+)`/g,
+    "<code>$1</code>"
+  );
+
+}
+
+
+/* =========================================================
+   RELATED ARTICLES
+========================================================= */
+
+function renderRelated(article) {
+
+  relatedGrid.innerHTML = "";
+
+  const related =
+    ARTICLES
+      .filter(item =>
+        item.category === article.category &&
+        item.id !== article.id
+      )
+      .slice(0, 2);
+
+
+  related.forEach(item => {
+
+    relatedGrid.appendChild(
+      createArticleCard(item)
+    );
+
+  });
+
+}
+
+
+/* =========================================================
+   BACK
+========================================================= */
+
+backBtn.addEventListener(
+  "click",
+  () => {
+
+    articleView.hidden = true;
+
+    homeView.hidden = false;
+
+    window.location.hash =
+      "latest";
+
+    document
+      .getElementById("latest")
+      .scrollIntoView({
+        behavior: "smooth"
+      });
+
+  }
+);
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+searchInput.addEventListener(
+  "input",
+  renderArticles
+);
+
+categoryFilter.addEventListener(
+  "change",
+  renderArticles
+);
+
+
+headerSearch.addEventListener(
+  "input",
+  () => {
+
+    searchInput.value =
+      headerSearch.value;
+
+    renderArticles();
+
+    if (headerSearch.value.trim()) {
+
+      document
+        .getElementById("latest")
+        .scrollIntoView({
+          behavior: "smooth"
+        });
+
+    }
+
+  }
+);
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+menuBtn.addEventListener(
+  "click",
+  () => {
+
+    const isOpen =
+      mainNav.classList.toggle("open");
+
+    menuBtn.setAttribute(
+      "aria-expanded",
+      isOpen
+    );
+
+  }
+);
+
+
+document
+  .querySelectorAll(".nav a")
+  .forEach(link => {
+
+    link.addEventListener(
+      "click",
+      () => {
+
+        mainNav.classList.remove("open");
+
+        menuBtn.setAttribute(
+          "aria-expanded",
+          "false"
+        );
+
+      }
+    );
+
+  });
+
+
+/* =========================================================
+   FOOTER CATEGORIES
+========================================================= */
+
+function renderFooterCategories() {
+
+  const footer =
+    document.getElementById(
+      "footerCategories"
+    );
+
+  footer.innerHTML = "";
+
+  CATEGORIES.forEach(category => {
+
+    const link =
+      document.createElement("a");
+
+    link.href =
+      "#latest";
+
+    link.textContent =
+      category.name;
+
+    link.addEventListener(
+      "click",
+      () => {
+
+        categoryFilter.value =
+          category.name;
+
+        renderArticles();
+
+      }
+    );
+
+    footer.appendChild(link);
+
+  });
+
+}
+
+
+/* =========================================================
+   TERMINAL
+========================================================= */
+
+const terminalText = [
+  "$ ./it-guide-by-umer",
+  "",
+  "Loading practical guides...",
+  "✓ Windows",
+  "✓ Linux",
+  "✓ Networking",
+  "✓ AI & Technology",
+  "✓ IT Support",
+  "✓ Software & Tools",
+  "",
+  "Ready.",
+  "Knowledge should be simple."
+];
+
+
+let terminalIndex = 0;
+
+function typeTerminal() {
+
+  const terminal =
+    document.getElementById(
+      "terminalLines"
+    );
+
+  terminal.textContent =
+    terminalText
+      .slice(0, terminalIndex)
+      .join("\n");
+
+  terminalIndex++;
+
+  if (
+    terminalIndex <=
+    terminalText.length
+  ) {
+
+    setTimeout(
+      typeTerminal,
+      180
+    );
+
+  }
+
+}
+
+
+/* =========================================================
+   NEWSLETTER
+========================================================= */
+
+document
+  .getElementById("newsletterForm")
+  .addEventListener(
+    "submit",
+    event => {
+
+      event.preventDefault();
+
+      const email =
+        document.getElementById(
+          "newsletterEmail"
+        ).value;
+
+      const message =
+        document.getElementById(
+          "newsletterMsg"
+        );
+
+      message.textContent =
+        `Thanks! ${email} has been added to the IT Guide by Umer list.`;
+
+      message.hidden = false;
+
+      event.target.reset();
+
+    }
+  );
+
+
+/* =========================================================
+   STATS
+========================================================= */
+
+document.getElementById(
+  "articleCount"
+).textContent =
+  ARTICLES.length;
+
+document.getElementById(
+  "categoryCount"
+).textContent =
+  CATEGORIES.length;
+
+
+/* =========================================================
+   YEAR
+========================================================= */
+
+document.getElementById(
+  "year"
+).textContent =
+  new Date().getFullYear();
+
+
+/* =========================================================
+   INITIALIZE
+========================================================= */
+
+renderCategories();
+
+renderFilterOptions();
+
+renderArticles();
+
+renderFooterCategories();
+
+typeTerminal();
+
+</script>
+
+
+<script>
+(function () {
+  const params = new URLSearchParams(window.location.search);
+  const articleId = params.get("id");
+
+  if (!articleId) {
+    window.location.href = "index.html";
+    return;
+  }
+
+  // Prevent the article page from using the normal home-page initialization.
+  // Existing site functions/data remain available.
+  window.__SEPARATE_ARTICLE_PAGE__ = true;
+
+  function findArticle() {
+    // Support the existing site's common article-data variable names.
+    const candidates = [
+      window.articles,
+      window.articleData,
+      window.ARTICLES,
+      window.posts,
+      window.POSTS
+    ];
+
+    for (const collection of candidates) {
+      if (!collection) continue;
+
+      if (Array.isArray(collection)) {
+        const found = collection.find(a =>
+          String(a.id ?? a.slug ?? a.key ?? "") === String(articleId)
+        );
+        if (found) return found;
+      }
+
+      if (typeof collection === "object" && !Array.isArray(collection)) {
+        if (collection[articleId]) return collection[articleId];
+      }
+    }
+
+    return null;
+  }
+
+  function renderSeparateArticle() {
+    const article = findArticle();
+
+    if (!article) {
+      const content = document.querySelector("#articleContent");
+      if (content) {
+        content.innerHTML = `
+          <div class="eyebrow">ARTICLE NOT FOUND</div>
+          <h1>Article not found</h1>
+          <p class="article-intro">
+            We couldn't find the article you're looking for.
+          </p>
+          <a class="btn primary" href="index.html">Back to IT Guide</a>
+        `;
+      }
+      return;
+    }
+
+    // Use the existing site's article renderer if it exists.
+    const renderers = [
+      window.renderArticle,
+      window.showArticle,
+      window.displayArticle,
+      window.openArticleView
+    ];
+
+    for (const renderer of renderers) {
+      if (typeof renderer === "function") {
+        try {
+          renderer(articleId);
+          return;
+        } catch (e) {}
+      }
+    }
+
+    // Generic fallback for article objects.
+    const content = document.querySelector("#articleContent");
+    if (!content) return;
+
+    const title = article.title || article.name || "Untitled Article";
+    const intro = article.intro || article.description || article.excerpt || "";
+    const category = article.category || article.tag || "";
+    const body = article.content || article.body || article.text || "";
+
+    document.title = "IT Guide by Umer | " + title;
+
+    content.innerHTML = `
+      ${category ? `<div class="eyebrow">${escapeHtml(category)}</div>` : ""}
+      <h1>${escapeHtml(title)}</h1>
+      ${intro ? `<p class="article-intro">${escapeHtml(intro)}</p>` : ""}
+      <div class="detail-meta">
+        <span>IT Guide by Umer</span>
+      </div>
+      <div class="body-section">${formatBody(body)}</div>
+    `;
+  }
+
+  function escapeHtml(value) {
+    return String(value)
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#039;");
+  }
+
+  function formatBody(value) {
+    if (Array.isArray(value)) {
+      return value.map(item => `<p>${escapeHtml(item)}</p>`).join("");
+    }
+    return String(value || "")
+      .split(/\n\s*\n/)
+      .map(p => `<p>${escapeHtml(p)}</p>`)
+      .join("");
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", renderSeparateArticle);
+  } else {
+    renderSeparateArticle();
+  }
+})();
+</script>
+
+</body>
+</html>
+
+
+
+:root {
+  --paper: #F6F5F0;
+  --panel: #FFFFFF;
+  --ink: #14181B;
+  --ink-soft: #5B5F57;
+  --line: #E4E1D6;
+  --accent: #2F6FED;
+  --accent-bg: #EAF0FF;
+  --accent-deep: #0B1E42;
+  --ok: #3FBE72;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; font-weight: 700; margin: 0; }
+a { text-decoration: none; color: inherit; }
+button { font-family: inherit; }
+.container { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+.eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.btn {
+  display: inline-block;
+  border-radius: 8px;
+  padding: 11px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+.btn.primary { background: var(--ink); color: #fff; }
+.btn.secondary { background: transparent; color: var(--ink); border-color: var(--line); }
+
+/* Header */
+.site-header {
+  position: sticky; top: 0; z-index: 20;
+  background: rgba(246,245,240,0.92);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--line);
+}
+.nav-wrap { display: flex; align-items: center; justify-content: space-between; padding: 14px 24px; gap: 20px; }
+.logo { display: flex; align-items: center; gap: 10px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 17px; }
+.logo-mark {
+  width: 32px; height: 32px; border-radius: 8px;
+  background: var(--accent-deep); color: #CFE0FF;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'JetBrains Mono', monospace; font-size: 13px;
+}
+.logo b { color: var(--accent); }
+.nav { display: flex; gap: 22px; }
+.nav a { font-size: 14px; color: var(--ink-soft); font-weight: 500; }
+.menu-btn { display: none; background: none; border: none; font-size: 20px; cursor: pointer; }
+.header-search { display: flex; align-items: center; gap: 6px; background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 6px 10px; }
+.header-search input { border: none; outline: none; background: transparent; font-size: 13px; width: 140px; font-family: inherit; }
+
+/* Hero */
+.hero { padding: 56px 0 40px; }
+.hero-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 48px; align-items: center; }
+.hero h1 { font-size: 42px; line-height: 1.1; margin: 14px 0 16px; }
+.hero h1 span { color: var(--accent); }
+.hero-text { font-size: 16px; color: var(--ink-soft); line-height: 1.65; margin-bottom: 24px; max-width: 460px; }
+.hero-actions { display: flex; gap: 12px; }
+
+.terminal-card { background: var(--accent-deep); border-radius: 10px; overflow: hidden; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #CFE0FF; }
+.terminal-top { display: flex; align-items: center; gap: 6px; padding: 10px 14px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+.terminal-top i { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+.terminal-top i:nth-child(1) { background: #E0605A; }
+.terminal-top i:nth-child(2) { background: #E0A62A; }
+.terminal-top i:nth-child(3) { background: #3FBE72; }
+.terminal-top span { margin-left: 8px; font-size: 12px; color: #8FA6D6; }
+.terminal-card pre { margin: 0; padding: 18px 16px; min-height: 150px; white-space: pre-wrap; }
+
+/* Stats */
+.stats { padding: 0 0 56px; }
+.stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 24px; }
+.stats-grid strong { display: block; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 22px; color: var(--accent); }
+.stats-grid span { font-size: 12px; color: var(--ink-soft); }
+
+/* Sections */
+.section { padding: 0 0 56px; }
+.section-head { display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 16px; margin-bottom: 20px; }
+.section-head h2 { font-size: 26px; margin-top: 8px; }
+.section-head p { color: var(--ink-soft); font-size: 14px; max-width: 380px; }
+
+/* Categories */
+.category-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.category {
+  text-align: left; background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+  padding: 16px 18px; cursor: pointer; display: flex; flex-direction: column; gap: 10px;
+  transition: border-color .15s ease, background .15s ease;
+}
+.category > span { font-size: 20px; color: var(--accent); }
+.category h3 { font-size: 15px; }
+.category p { font-size: 13px; color: var(--ink-soft); line-height: 1.5; margin: 0; }
+.category.active { background: var(--accent-bg); border-color: var(--accent); }
+
+/* Filter bar */
+.filter-wrap { display: flex; gap: 10px; flex-wrap: wrap; }
+.filter-wrap input, .filter-wrap select {
+  border: 1px solid var(--line); border-radius: 8px; padding: 8px 12px; font-size: 13px;
+  background: var(--panel); color: var(--ink); font-family: inherit;
+}
+
+/* Article grid + card */
+.article-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.article-card {
+  text-align: left; background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+  padding: 20px; cursor: pointer; display: flex; flex-direction: column; gap: 12px; height: 100%;
+}
+.article-card .tag {
+  font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--accent);
+  background: var(--accent-bg); padding: 3px 8px; border-radius: 6px; width: fit-content;
+}
+.article-card h3 { font-size: 17px; line-height: 1.35; }
+.article-card p { font-size: 14px; color: var(--ink-soft); line-height: 1.6; margin: 0; flex-grow: 1; }
+.article-meta {
+  display: flex; align-items: center; justify-content: space-between; font-size: 12px;
+  color: var(--ink-soft); border-top: 1px solid var(--line); padding-top: 12px;
+}
+.article-card .read-link { color: var(--accent); font-weight: 500; }
+.no-results { color: var(--ink-soft); font-size: 14px; padding: 24px 0; }
+
+/* Newsletter */
+.newsletter { background: var(--accent-deep); padding: 48px 24px; }
+.newsletter-box { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; max-width: 1080px; margin: 0 auto; }
+.newsletter-box h2 { color: #fff; font-size: 24px; margin: 8px 0 6px; }
+.newsletter-box p { color: #9FB3DC; font-size: 14px; margin: 0; }
+.newsletter-box form { display: flex; gap: 8px; }
+.newsletter-box input { border: none; border-radius: 8px; padding: 11px 14px; font-size: 14px; width: 220px; font-family: inherit; }
+.newsletter-msg { max-width: 1080px; margin: 12px auto 0; padding: 0 24px; color: #9FE1CB; font-size: 12px; text-align: right; }
+
+/* About / contact */
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+.two-col p { font-size: 14px; color: var(--ink-soft); line-height: 1.7; }
+.contact { background: var(--panel); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 40px 0; }
+.contact-card { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+.contact-card p { font-size: 14px; color: var(--ink-soft); margin: 0; }
+
+/* Article detail view */
+.article-container { max-width: 760px; padding: 40px 24px 80px; }
+.back-btn { background: none; border: none; cursor: pointer; color: var(--ink-soft); font-size: 13px; margin-bottom: 24px; }
+#articleContent h1 { font-size: 32px; line-height: 1.25; margin: 16px 0 12px; }
+.detail-meta { margin-bottom: 32px; padding-bottom: 24px; border-bottom: 1px solid var(--line); border-top: none; justify-content: flex-start; }
+.body-section { margin-bottom: 26px; }
+.body-section h2 { font-size: 19px; margin-bottom: 10px; }
+.body-section p { font-size: 15.5px; line-height: 1.75; color: #2C302B; margin: 0; }
+.related-block { margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--line); }
+.related-grid { margin-top: 14px; grid-template-columns: 1fr 1fr; }
+
+/* Footer */
+footer { border-top: 1px solid var(--line); }
+.footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 32px; padding: 40px 24px 24px; }
+.footer-grid h4 { font-size: 13px; font-weight: 600; margin: 0 0 10px; }
+.footer-grid p { font-size: 13px; color: var(--ink-soft); max-width: 260px; line-height: 1.6; }
+.footer-grid > div { display: flex; flex-direction: column; }
+.footer-grid a { display: block; font-size: 13px; color: var(--ink-soft); padding: 4px 0; }
+.copyright { padding: 16px 24px; border-top: 1px solid var(--line); font-size: 12px; color: var(--ink-soft); }
+
+/* Mobile */
+@media (max-width: 760px) {
+  .menu-btn { display: block; }
+  .header-search { display: none; }
+  .nav { display: none; flex-direction: column; gap: 0; position: absolute; top: 100%; left: 0; right: 0; background: var(--panel); border-bottom: 1px solid var(--line); padding: 10px 24px; }
+  .nav.open { display: flex; }
+  .nav a { padding: 10px 0; border-bottom: 1px solid var(--line); }
+  .hero-grid { grid-template-columns: 1fr; }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .category-grid { grid-template-columns: 1fr; }
+  .article-grid { grid-template-columns: 1fr; }
+  .related-grid { grid-template-columns: 1fr; }
+  .two-col { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; }
+}
